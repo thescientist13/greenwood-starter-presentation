@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles/theme.css"></link>
+    <script type="module" src="/components/slide-list.js"></script>
+    <script type="module" src="/components/slide-viewer.js"></script>
+    <script type="module">
+      import client from '@greenwood/plugin-graphql/core/client';
+      import GraphQuery from '@greenwood/plugin-graphql/queries/graph';
+
+      let currentSlide = 0;
+      
+      const response = await client.query({
+        query: GraphQuery
+      });
+      const slides = response.data.graph.filter(slide => slide.id !== 'index');
+      
+      document.querySelector('slide-list').setAttribute('slides', JSON.stringify(slides));
+      document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[currentSlide]));
+    </script>
+
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="row">
+        <h1>Ribbon</h1>
+      </section>
+      
+      <section class="row">
+        <div class="left">
+          <h1>Slide List</h1>
+          <slide-list></slide-list>
+        </div>
+
+        <div class="column">
+          <h1>Slide Viewer</h1>
+          <slide-viewer></slide-viewer>
+        </div>
+      </section>
+
+      <section class="row">
+        <h1>Footer</h1>
+      </section>
+    </main>
+  </body>
+</html>
