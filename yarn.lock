@@ -3634,6 +3634,11 @@ simple.css@^0.1.3:
   resolved "https://registry.yarnpkg.com/simple.css/-/simple.css-0.1.3.tgz#889e7e35e690d890108ef9f39d8f3582d6d7f4e0"
   integrity sha1-iJ5+NeaQ2JAQjvnznY81gtbX9OA=
 
+simpledotcss@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/simpledotcss/-/simpledotcss-1.0.0.tgz#b5ac8fcd73d111938def9c0f43f1839d6eae96be"
+  integrity sha512-inneK6Wqh5rUdASxJMAKJORbDeKRySZPlY6H1Jqc6o6t5QbXhd5UZUi5snkKnB0ror0H72in0zlNeeA4Vw+Fiw==
+
 slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"

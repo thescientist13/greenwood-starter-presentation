@@ -12,6 +12,26 @@ class SlideList extends LitElement {
 
   static get styles() {
     return css`
+      :host {
+        max-height: 400px;
+        overflow: scroll;
+      }
+
+      div {
+        position: relative;
+      }
+
+      /* https://stackoverflow.com/a/20102415/417806 */
+      .iframe-screen {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        cursor: pointer;
+        z-index: 100;
+      }
+
       iframe {
         min-height: 200px;
       }
@@ -22,12 +42,19 @@ class SlideList extends LitElement {
     super();
     this.slides = [];
   }
+
+  slideSelected(slide) {
+    document.dispatchEvent(new CustomEvent('slide-selected', { detail: slide }));
+  }
   
   render() {
     const { slides } = this;
     const list = slides.map((slide) => {
       return html`
-        <iframe src="${slide.route}"></iframe>
+        <div @click="${() => this.slideSelected(slide)}">
+          <iframe src="${slide.route}"></iframe>
+          <div class="iframe-screen"></div>
+        </div>
       `;
     });
     

@@ -1,4 +1,12 @@
-@import '../../node_modules/simple.css/dist/simple.css';
+/* @import '../../node_modules/simpledotcss/simple.css'; */
+
+:root {
+  --bg: #ffffff;
+}
+
+main {
+  max-width: 100%;
+}
 
 .row {
   display: flex;
@@ -15,5 +23,6 @@
 }
 
 .left {
+  float: left;
   width: 23%;
 }

@@ -7,16 +7,21 @@
     <script type="module">
       import client from '@greenwood/plugin-graphql/core/client';
       import GraphQuery from '@greenwood/plugin-graphql/queries/graph';
-
-      let currentSlide = 0;
       
-      const response = await client.query({
+      client.query({
         query: GraphQuery
-      });
-      const slides = response.data.graph.filter(slide => slide.id !== 'index');
+      }).then((response) => {
+        const slides = response.data.graph.filter(slide => slide.id !== 'index');
       
-      document.querySelector('slide-list').setAttribute('slides', JSON.stringify(slides));
-      document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[currentSlide]));
+        document.querySelector('slide-list').setAttribute('slides', JSON.stringify(slides));
+        document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[0]));
+      });
+    </script>
+
+    <script>
+      document.addEventListener('slide-selected', (slide) => {
+        document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slide.detail));
+      })
     </script>
 
     <style>
@@ -25,12 +30,12 @@
   </head>
   <body>
     <main>
-      <section class="row">
+      <section>
         <h1>Ribbon</h1>
       </section>
       
-      <section class="row">
-        <div class="left">
+      <section>
+        <div class="column left">
           <h1>Slide List</h1>
           <slide-list></slide-list>
         </div>
@@ -41,7 +46,7 @@
         </div>
       </section>
 
-      <section class="row">
+      <section>
         <h1>Footer</h1>
       </section>
     </main>
