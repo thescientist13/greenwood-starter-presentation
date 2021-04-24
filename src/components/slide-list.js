@@ -13,7 +13,7 @@ class SlideList extends LitElement {
   static get styles() {
     return css`
       :host {
-        max-height: 400px;
+        max-height: 700px;
         overflow: scroll;
       }
 
@@ -34,6 +34,8 @@ class SlideList extends LitElement {
 
       iframe {
         min-height: 200px;
+        margin-left: 15px;
+        margin-top: -10px;
       }
     `;
   }
@@ -49,8 +51,9 @@ class SlideList extends LitElement {
   
   render() {
     const { slides } = this;
-    const list = slides.map((slide) => {
+    const list = slides.map((slide, index) => {
       return html`
+        <span>${++index}</span>
         <div @click="${() => this.slideSelected(slide)}">
           <iframe src="${slide.route}"></iframe>
           <div class="iframe-screen"></div>

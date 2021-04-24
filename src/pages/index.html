@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/styles/theme.css"></link>
     <script type="module" src="/components/slide-list.js"></script>
     <script type="module" src="/components/slide-viewer.js"></script>
     <script type="module">
@@ -25,13 +24,57 @@
     </script>
 
     <style>
+      body {
+        background: #e7e7e7;
+      }
 
+      main {
+        min-width: 1024px;
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex: 1;
+        min-height: 300px;
+      }
+
+      .left {
+        float: left;
+        min-width: 23%;
+      }
+
+      .right {
+        min-width: 67%;
+      }
+
+      footer {
+        margin-top: 20px;
+      }
+
+      footer a {
+        text-decoration: none;
+      }
+
+      footer a:visited {
+        color: #020202;
+      }
+
+      footer h4, header h1 {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <main>
       <section>
-        <h1>Ribbon</h1>
+        <header>
+          <h1>Ribbon</h1>
+        </header>
       </section>
       
       <section>
@@ -40,14 +83,18 @@
           <slide-list></slide-list>
         </div>
 
-        <div class="column">
+        <div class="column right">
           <h1>Slide Viewer</h1>
           <slide-viewer></slide-viewer>
         </div>
       </section>
 
       <section>
-        <h1>Footer</h1>
+        <footer>
+          <h4>
+            <a href="https://www.greenwoodjs.io/">GWD/PPT &#9672 Built with GreenwoodJS</a>
+          </h4>
+        </footer>
       </section>
     </main>
   </body>

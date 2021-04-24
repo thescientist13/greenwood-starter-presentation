@@ -1,28 +1,39 @@
-/* @import '../../node_modules/simpledotcss/simple.css'; */
+@import '../../node_modules/simpledotcss/simple.css';
+
 
 :root {
-  --bg: #ffffff;
+  padding: 0 25px;
+  background: url('/assets/background.jpg');
+  --base-fontsize: 1.65rem;
+}
+
+body {
+  background: transparent!important;
 }
 
 main {
   max-width: 100%;
+  background: none;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+p {
+  width: 75%;
+}
+
+h1 {
+  color: red;
+}
+
+h2 {
+  color: orange;
+}
+
+h3 {
+  color: blue;
+}
+
+iframe body {
+  background: tranparent;
   width: 100%;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
-}
-
-.left {
-  float: left;
-  width: 23%;
+  height: 100%;
 }

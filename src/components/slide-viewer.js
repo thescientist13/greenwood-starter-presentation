@@ -13,8 +13,8 @@ class SlideViewer extends LitElement {
   static get styles() {
     return css`
       iframe {
-        width: 80%;
-        height: 400px;
+        width: 90%;
+        height: 700px;
       }
     `;
   }
