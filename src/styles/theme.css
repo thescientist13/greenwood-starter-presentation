@@ -1,9 +1,9 @@
 @import '../../node_modules/simpledotcss/simple.css';
 
-
 :root {
   padding: 0 25px;
   background: url('/assets/background.jpg');
+
   --base-fontsize: 1.65rem;
 }
 

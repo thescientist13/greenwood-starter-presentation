@@ -52,8 +52,10 @@ class SlideList extends LitElement {
   render() {
     const { slides } = this;
     const list = slides.map((slide, index) => {
+      const slideNum = index += 1;
+
       return html`
-        <span>${++index}</span>
+        <span>${slideNum}</span>
         <div @click="${() => this.slideSelected(slide)}">
           <iframe src="${slide.route}"></iframe>
           <div class="iframe-screen"></div>
