@@ -57,7 +57,7 @@ class SlideList extends LitElement {
       return html`
         <span>${slideNum}</span>
         <div @click="${() => this.slideSelected(slide)}">
-          <iframe src="${slide.route}"></iframe>
+          <iframe src="${slide.route}" loading="lazy"></iframe>
           <div class="iframe-screen"></div>
         </div>
       `;
