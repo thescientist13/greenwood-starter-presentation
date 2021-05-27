@@ -31,8 +31,8 @@
     "simpledotcss": "^1.0.0"
   },
   "devDependencies": {
-    "@greenwood/cli": "^0.12.0",
-    "@greenwood/plugin-graphql": "^0.12.0",
+    "@greenwood/cli": "^0.12.3",
+    "@greenwood/plugin-graphql": "^0.12.3",
     "eslint": "^7.25.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",
