@@ -1,39 +1,6 @@
-@import '../../node_modules/simpledotcss/simple.css';
-
 :root {
-  padding: 0 25px;
-  background: url('/assets/background.jpg');
-
+  --primary: gray;
+  --secondary: orange;
+  --backgroundUrl: url("/assets/background.jpg");
   --base-fontsize: 1.65rem;
-}
-
-body {
-  background: transparent!important;
-}
-
-main {
-  max-width: 100%;
-  background: none;
-}
-
-p {
-  width: 75%;
-}
-
-h1 {
-  color: red;
-}
-
-h2 {
-  color: orange;
-}
-
-h3 {
-  color: blue;
-}
-
-iframe body {
-  background: tranparent;
-  width: 100%;
-  height: 100%;
 }
