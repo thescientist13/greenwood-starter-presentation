@@ -1,12 +1,10 @@
 :root {
-  --color-primary: #113355;
-  --color-secondary: #74B238;
-  --color-tertiary: #2B85DA;
+  --color-primary: #135;
+  --color-secondary: #74b238;
+  --color-tertiary: #2b85da;
   --color-text-light: #efefef;
   --color-text-dark: #020202;
-
-  --font-family: 'Optima';
+  --font-family: 'Optima', sans-serif;
   --font-size: 1.5rem;
-
   --backgroundUrl: url("/assets/background.jpg");
 }

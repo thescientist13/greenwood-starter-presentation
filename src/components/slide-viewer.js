@@ -15,6 +15,7 @@ class SlideViewer extends LitElement {
       iframe {
         width: 90%;
         height: 700px;
+        filter: drop-shadow(5px 10px 3px gray);
       }
     `;
   }

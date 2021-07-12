@@ -52,6 +52,7 @@ class SlideList extends LitElement {
         height: 500px;
         padding: 0;
         overflow: hidden;
+        filter: drop-shadow(5px 10px 3px gray);
       }
 
       #scaled-frame {
