@@ -10,6 +10,7 @@ class SlideList extends LitElement {
     };
   }
 
+  // 
   static get styles() {
     return css`
       :host {
@@ -32,10 +33,38 @@ class SlideList extends LitElement {
         z-index: 100;
       }
 
-      iframe {
-        min-height: 200px;
+      /* iframe {
+        height: 200px;
+        width: 10%;
         margin-left: 15px;
         margin-top: -10px;
+        transform: scale(1.5);
+        transform-origin: 0 0;
+      } */
+
+      #wrap {
+        width: 100%;
+        height: 500px;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #scaled-frame {
+        width: 100%;
+        height: 100%;
+        zoom: 0.75;
+        -moz-transform: scale(0.75);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.75);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.75);
+        -webkit-transform-origin: 0 0;
+      }
+      
+      @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        #scaled-frame {
+          zoom: 1;
+        }
       }
     `;
   }
@@ -57,7 +86,9 @@ class SlideList extends LitElement {
       return html`
         <span>${slideNum}</span>
         <div @click="${() => this.slideSelected(slide)}">
-          <iframe src="${slide.route}" loading="lazy"></iframe>
+          <div id="wrap">
+            <iframe id="scaled-frame" src="${slide.route}" loading="lazy"></iframe>
+          </div>        
           <div class="iframe-screen"></div>
         </div>
       `;

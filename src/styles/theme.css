@@ -1,6 +1,6 @@
 :root {
   --primary: gray;
-  --secondary: orange;
+  --secondary: blue;
   --backgroundUrl: url("/assets/background.jpg");
   --base-fontsize: 1.65rem;
 }
