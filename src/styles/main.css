@@ -1,11 +1,12 @@
-@import '../../node_modules/simpledotcss/simple.css';
+/* @import '../../node_modules/simpledotcss/simple.css'; */
 
 :root {
-  /* --primary: red; */
   padding: 0 25px;
   /* background: var(--backgroundUrl); */
   background-color: var(--color-primary);
-  color: var(--color-text)
+  color: var(--color-text-light);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
 }
 
 body {
@@ -19,6 +20,14 @@ main {
 
 p {
   width: 75%;
+}
+
+h1 {
+  font-family: 'Garamond'
+}
+
+h1, h2, p, li {
+  padding: 1rem;
 }
 
 h2, h3, h4, h5, h6 {
