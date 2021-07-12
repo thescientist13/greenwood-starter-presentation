@@ -3,7 +3,9 @@
 :root {
   /* --primary: red; */
   padding: 0 25px;
-  background: var(--backgroundUrl);
+  /* background: var(--backgroundUrl); */
+  background-color: var(--color-primary);
+  color: var(--color-text)
 }
 
 body {
@@ -19,12 +21,8 @@ p {
   width: 75%;
 }
 
-h1, a {
-  color: var(--primary);
-}
-
-h2 {
-  color: var(--secondary);
+h2, h3, h4, h5, h6 {
+  color: var(--color-secondary);
 }
 
 iframe body {

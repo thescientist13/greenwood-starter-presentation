@@ -10,7 +10,7 @@ class SlideList extends LitElement {
     };
   }
 
-  // 
+  // TODO preserve aspect ratio
   static get styles() {
     return css`
       :host {
@@ -20,6 +20,7 @@ class SlideList extends LitElement {
 
       div {
         position: relative;
+        padding-left: 15px;
       }
 
       /* https://stackoverflow.com/a/20102415/417806 */
@@ -41,6 +42,10 @@ class SlideList extends LitElement {
         transform: scale(1.5);
         transform-origin: 0 0;
       } */
+
+      span.num {
+        float: left
+      }
 
       #wrap {
         width: 100%;
@@ -84,7 +89,7 @@ class SlideList extends LitElement {
       const slideNum = index += 1;
 
       return html`
-        <span>${slideNum}</span>
+        <span class="num">${slideNum})</span>
         <div @click="${() => this.slideSelected(slide)}">
           <div id="wrap">
             <iframe id="scaled-frame" src="${slide.route}" loading="lazy"></iframe>

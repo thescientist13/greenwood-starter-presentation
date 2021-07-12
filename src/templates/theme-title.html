@@ -7,14 +7,41 @@
 
     <style>
       :root h1 {
-        /* font-size: 7rem; */
-        text-decoration: underline;
+        width: 40%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 10%;
+      }
+
+      :root h2, :root h3, :root h4, :root h5, :root h6 {
+        width: 40%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      div.container {
+        border: 1px var(--color-secondary) solid;
+        width: 70%;
+        height: 50%;
+        margin: 15% auto;
+        vertical-align: middle;
+      }
+
+      h1:after{
+        content: "";
+        display: block;
+        width: 20%;
+        margin-left: 40%;;
+        height: 2px;
+        background: var(--color-tertiary)
       }
     </style>
   </head>
 
   <body>
-    <content-outlet></content-outlet>
+    <div class="container">
+      <content-outlet></content-outlet>
+    </div>
   </body>
 
 </html>

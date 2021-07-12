@@ -1,6 +1,11 @@
 :root {
-  --primary: gray;
-  --secondary: blue;
+  --color-primary: #113355;
+  --color-secondary: #74B238;
+  --color-tertiary: #2B85DA;
+  --color-text-light: #efefef;
+  --color-text-dark: #020202;
+
   --backgroundUrl: url("/assets/background.jpg");
+  
   --base-fontsize: 1.65rem;
 }
