@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="module" src="/components/presenter-mode.js"></script>
     <script type="module" src="/components/slide-list.js"></script>
     <script type="module" src="/components/slide-viewer.js"></script>
     <script type="module">
@@ -12,6 +13,7 @@
       }).then((response) => {
         const slides = response.data.graph.filter(slide => slide.id !== 'index');
       
+        document.querySelector('presenter-mode').setAttribute('slides', JSON.stringify(slides));
         document.querySelector('slide-list').setAttribute('slides', JSON.stringify(slides));
         document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[0]));
       });
@@ -32,6 +34,14 @@
         min-width: 1024px;
       }
 
+      header {
+        width: 90%;
+      }
+
+      header > * {
+        float: right;
+      }
+
       .column {
         display: flex;
         flex-direction: column;
@@ -43,6 +53,7 @@
       .left {
         float: left;
         min-width: 23%;
+
       }
 
       .right {
@@ -71,11 +82,11 @@
   </head>
   <body>
     <main>
-      <!-- <section>
+      <section>
         <header>
-          <h1>Ribbon</h1>
+          <presenter-mode></presenter-mode>
         </header>
-      </section> -->
+      </section>
       
       <section>
         <div class="column left">
