@@ -1,11 +1,11 @@
 {
-  "name": "greenwood-starter-powerpoint",
+  "name": "greenwood-starter-presentation",
   "version": "0.1.0",
   "description": "",
   "main": ".eslintrc.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thescientist13/greenwood-starter-powerpoint.git"
+    "url": "git+https://github.com/thescientist13/greenwood-starter-presentation.git"
   },
   "keywords": [
     "Greenwood",
