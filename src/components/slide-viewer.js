@@ -24,11 +24,11 @@ class SlideViewer extends LitElement {
     super();
     this.slides = {};
   }
-  
+
   render() {
     const { slide } = this;
     const url = slide ? slide.route : '';
-    
+
     return html`
       <iframe src="${url}"></iframe>
     `;

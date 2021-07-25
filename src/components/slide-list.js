@@ -49,13 +49,17 @@ class SlideList extends LitElement {
 
       #wrap {
         width: 100%;
-        height: 500px;
         padding: 0;
-        overflow: hidden;
         filter: drop-shadow(5px 10px 3px gray);
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 */
+        position: relative;
       }
 
-      #scaled-frame {
+      #wrap > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         zoom: 0.75;
@@ -66,7 +70,7 @@ class SlideList extends LitElement {
         -webkit-transform: scale(0.75);
         -webkit-transform-origin: 0 0;
       }
-      
+
       @media screen and (-webkit-min-device-pixel-ratio: 0) {
         #scaled-frame {
           zoom: 1;
@@ -83,7 +87,7 @@ class SlideList extends LitElement {
   slideSelected(slide) {
     document.dispatchEvent(new CustomEvent('slide-selected', { detail: slide }));
   }
-  
+
   render() {
     const { slides } = this;
     const list = slides.map((slide, index) => {
@@ -94,12 +98,12 @@ class SlideList extends LitElement {
         <div @click="${() => this.slideSelected(slide)}">
           <div id="wrap">
             <iframe id="scaled-frame" src="${slide.route}" loading="lazy"></iframe>
-          </div>        
+          </div>
           <div class="iframe-screen"></div>
         </div>
       `;
     });
-    
+
     return html`
       ${list}
     `;

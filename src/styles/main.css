@@ -1,15 +1,16 @@
 /* @import '../../node_modules/simpledotcss/simple.css'; */
 
 :root {
-  padding: 0 25px;
   background-color: var(--color-primary);
   color: var(--color-text-light);
   font-family: var(--font-family);
   font-size: var(--font-size);
+  margin: 0;
 }
 
 body {
   background: transparent!important;
+  margin: 0;
 }
 
 main {

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="/styles/theme.css"></link>
+    <link rel="stylesheet" href="/styles/main.css"></link>
+
+    <style>
+
+      :root {
+        width: 99%;
+        margin: auto;
+      }
+
+      :root: div {
+        padding: 3rem;
+        background-color: pink;
+      }
+
+      :root h1 {
+        background-color: var(--color-tertiary);
+        width: 99%;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      :root p {
+        padding: 0 2rem;
+      }
+
+      div#container {
+        width: 100%;
+        margin: 0;
+        padding-top: 6rem;
+      }
+
+      div#container > * {
+        margin-left: auto;
+        width: 50%;
+      }
+
+      div#container > h1 {
+        width: 100%;
+      }
+
+      div#container > hr {
+        position: absolute;
+        width: 100px;
+        border: 3px solid var(--color-secondary);
+        bottom: 2rem;
+        left: 80%;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <content-outlet></content-outlet>
+      <hr />
+    </div>
+  </body>
+
+</html>
