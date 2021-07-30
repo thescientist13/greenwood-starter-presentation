@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="/styles/theme.css"></link>
+    <link rel="stylesheet" href="/styles/main.css"></link>
+
+    <!-- "Full Text Slide" from examples -->
+
+    <style>
+
+      :root {
+        width: 90%;
+      }
+      div#container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 90vh;
+        padding-left: 2rem;
+        width: 100%;
+        margin: 0;
+      }
+
+      p {
+        margin-top: auto;
+        font-size: 2rem;
+        padding-left: 1rem;
+      }
+
+      div#container > hr {
+        position: absolute;
+        width: 100px;
+        border: 3px solid var(--color-secondary);
+        bottom: 2rem;
+        left: 80%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <content-outlet></content-outlet>
+      <hr />
+    </div>
+  </body>
+
+</html>
