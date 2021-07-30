@@ -2,7 +2,7 @@ const pluginGraphQL = require('@greenwood/plugin-graphql');
 const pluginImportCss = require('@greenwood/plugin-import-css');
 
 module.exports = {
-  title: 'My Presentation',
+  title: 'Knowing Your TCO',
   
   plugins: [
     ...pluginImportCss(),
