@@ -11,11 +11,14 @@
       client.query({
         query: GraphQuery
       }).then((response) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedSlide = urlParams.get('selectedSlideId');
         const slides = response.data.graph.filter(slide => slide.id !== 'index');
-      
+        const currentSlideIndex = selectedSlide ? slides.findIndex(slide => slide.id === selectedSlide) : 0;
+
         document.querySelector('presenter-mode').setAttribute('slides', JSON.stringify(slides));
         document.querySelector('slide-list').setAttribute('slides', JSON.stringify(slides));
-        document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[0]));
+        document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[currentSlideIndex]));
       });
     </script>
 
