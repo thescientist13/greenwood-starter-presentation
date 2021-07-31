@@ -85,6 +85,15 @@ class SlideList extends LitElement {
   }
 
   slideSelected(slide) {
+    try {
+      const { protocol, host, pathname } = window.location;
+      const newurl = `${protocol}//${host}${pathname}?selectedSlideId=${slide.id}`;
+      
+      window.history.pushState({ path: newurl }, '', newurl);
+    } catch (e) {
+      console.error(e);
+    }
+
     document.dispatchEvent(new CustomEvent('slide-selected', { detail: slide }));
   }
 

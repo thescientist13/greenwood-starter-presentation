@@ -22,7 +22,7 @@ class SlideViewer extends LitElement {
 
   constructor() {
     super();
-    this.slides = {};
+    this.slide = {};
   }
 
   render() {
