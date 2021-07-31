@@ -29,9 +29,12 @@ h1 {
 
 h1,
 h2,
-p,
-li {
+p {
   padding: 1rem;
+}
+
+li {
+  padding: 0.25rem;
 }
 
 h2,

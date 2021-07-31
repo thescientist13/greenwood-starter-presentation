@@ -6,7 +6,7 @@
   --color-text-light: #efefef;
   --color-text-dark: #020202;
   --font-family: 'Optima', sans-serif;
-  --font-size: 1.5rem;
+  --font-size: 2rem;
   --backgroundUrl: url('/assets/background.jpg');
 }
 
@@ -14,9 +14,10 @@
   --color-primary: #135;
   --color-secondary: #74b238;
   --color-tertiary: #2b85da;
+  --color-accent: pink;
   --color-text-light: #efefef;
   --color-text-dark: #020202;
   --font-family: 'Optima', sans-serif;
-  --font-size: 1.5rem;
+  --font-size: 2rem;
   --backgroundUrl: url('/assets/background.jpg');
 }
