@@ -27,7 +27,7 @@ class SlideViewer extends LitElement {
 
   render() {
     const { slide } = this;
-    const url = slide ? slide.route : '';
+    const url = slide && slide.route ? slide.route : '';
 
     return html`
       <iframe src="${url}"></iframe>
