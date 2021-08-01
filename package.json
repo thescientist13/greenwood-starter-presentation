@@ -32,6 +32,7 @@
   "devDependencies": {
     "@greenwood/cli": "^0.14.0",
     "@greenwood/plugin-graphql": "^0.14.0",
+    "@greenwood/plugin-import-css": "^0.14.2",
     "eslint": "^7.25.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",
