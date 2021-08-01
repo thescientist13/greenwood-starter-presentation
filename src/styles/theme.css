@@ -6,7 +6,7 @@
   --color-text-dark: #020202;
   --font-family: 'Optima', sans-serif;
   --font-size: 1.5rem;
-  --backgroundUrl: url("/assets/background.jpg");
+  --backgroundUrl: url('/assets/background.jpg');
 }
 
 :host {
