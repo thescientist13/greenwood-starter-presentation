@@ -8,3 +8,14 @@
   --font-size: 1.5rem;
   --backgroundUrl: url("/assets/background.jpg");
 }
+
+:host {
+  --color-primary: #135;
+  --color-secondary: #74b238;
+  --color-tertiary: #2b85da;
+  --color-text-light: #efefef;
+  --color-text-dark: #020202;
+  --font-family: 'Optima', sans-serif;
+  --font-size: 1.5rem;
+  --backgroundUrl: url('/assets/background.jpg');
+}

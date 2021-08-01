@@ -1,4 +1,5 @@
-import { css, html, LitElement } from 'lit-element';
+import { css, html, LitElement, unsafeCSS } from 'lit-element';
+import themeCss from '../styles/theme.css?type=css';
 
 class PresenterMode extends LitElement {
   
@@ -13,6 +14,8 @@ class PresenterMode extends LitElement {
 
   static get styles() {
     return css`
+      ${unsafeCSS(themeCss)}
+
       .fullscreen-container {
         display: none;
       }
