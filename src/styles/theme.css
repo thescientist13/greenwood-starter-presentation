@@ -6,7 +6,7 @@
   --color-text-dark: #020202;
   --font-family: 'Optima', sans-serif;
   --font-size: 1.5rem;
-  --backgroundUrl: url('/assets/background.jpg');
+  --backgroundUrl: url('/node_modules/greenwood-starter-presentation/dist/assets/background.jpg');
 }
 
 :host {
@@ -17,5 +17,5 @@
   --color-text-dark: #020202;
   --font-family: 'Optima', sans-serif;
   --font-size: 1.5rem;
-  --backgroundUrl: url('/assets/background.jpg');
+  --backgroundUrl: url('/node_modules/greenwood-starter-presentation/dist/assets/background.jpg');
 }
