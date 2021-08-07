@@ -1,5 +1,5 @@
 import { css, html, LitElement, unsafeCSS } from 'lit-element';
-import themeCss from '/node_modules/greenwood-starter-presentation/dist/styles/theme.css?type=css';
+import themeCss from '../styles/theme.css?type=css';
 
 class PresenterMode extends LitElement {
   
