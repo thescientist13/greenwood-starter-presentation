@@ -16,7 +16,7 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
   }
 
   async resolve(url) {
-    return Promise.resolve(this.getBareUrlPath(url).replace(`/node_modules/${packageName}/dist/`, path.join(process.cwd(), '/src/')));
+    return Promise.resolve(url.replace(`/node_modules/${packageName}/dist/`, path.join(process.cwd(), '/src/')));
   }
 }
 
