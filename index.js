@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = () => [{
   type: 'context',
-  name: `${name}:context`,
+  name: `${packageJson.name}:context`,
   provider: () => {
     const { name } = packageJson;
     const baseDistDir = `node_modules/${name}/dist`;
