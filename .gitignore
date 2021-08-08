@@ -1,3 +1,5 @@
 .greenwood/
+dist/
 node_modules/
+package/
 public/

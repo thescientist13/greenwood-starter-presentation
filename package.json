@@ -1,8 +1,11 @@
 {
   "name": "greenwood-starter-presentation",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "",
-  "main": ".eslintrc.js",
+  "main": "index.js",
+  "files": [
+    "dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thescientist13/greenwood-starter-presentation.git"
@@ -18,21 +21,26 @@
     "clean": "rimraf public .greenwood/",
     "build": "greenwood build",
     "develop": "greenwood develop",
+    "dist": "rsync -rv --exclude 'pages/' src/ dist",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint \"*.js\" \"./src/**/*.js\"",
     "lint:css": "stylelint \"./src/**/*.js\", \"./src/**/*.css\"",
+    "prepublish": "rm -rf dist/ && mkdir dist/ && yarn dist",
     "serve": "greenwood serve",
     "start": "yarn develop"
   },
+  "peerDependencies": {
+    "@greenwood/cli": "~0.15.0",
+    "@greenwood/plugin-graphql": "~0.15.0",
+    "@greenwood/plugin-import-css": "~0.15.0"
+  },
   "dependencies": {
-    "lit-element": "^2.4.0",
-    "prismjs": "^1.21.0",
-    "simpledotcss": "^1.0.0"
+    "lit-element": "^2.4.0"
   },
   "devDependencies": {
-    "@greenwood/cli": "^0.14.0",
-    "@greenwood/plugin-graphql": "^0.14.0",
-    "@greenwood/plugin-import-css": "^0.14.2",
+    "@greenwood/cli": "~0.15.0",
+    "@greenwood/plugin-graphql": "~0.15.0",
+    "@greenwood/plugin-import-css": "~0.15.0",
     "eslint": "^7.25.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",
