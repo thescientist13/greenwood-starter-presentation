@@ -5,12 +5,10 @@ module.exports = () => [{
   type: 'context',
   name: `${packageJson.name}:context`,
   provider: () => {
-    const { name } = packageJson;
-    const baseDistDir = `node_modules/${name}/dist`;
 
     return {
       templates: [
-        path.join(__dirname, `${baseDistDir}/templates`)
+        path.join(__dirname, 'dist/templates')
       ]
     };
   }
