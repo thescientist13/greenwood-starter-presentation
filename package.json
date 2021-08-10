@@ -38,9 +38,9 @@
     "lit-element": "^2.4.0"
   },
   "devDependencies": {
-    "@greenwood/cli": "~0.15.0",
-    "@greenwood/plugin-graphql": "~0.15.0",
-    "@greenwood/plugin-import-css": "~0.15.0",
+    "@greenwood/cli": "~0.15.1",
+    "@greenwood/plugin-graphql": "~0.15.1",
+    "@greenwood/plugin-import-css": "~0.15.1",
     "eslint": "^7.25.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",

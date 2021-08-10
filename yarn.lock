@@ -285,10 +285,10 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.0.tgz#0eee6373e11418bfe0b5638f654df7a4ca6a3950"
   integrity sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg==
 
-"@greenwood/cli@~0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@greenwood/cli/-/cli-0.15.0.tgz#8dfc108a3d977fac3e3a6d4bed4ba2fd23d0eb3d"
-  integrity sha512-OyABMwXVofRCUPZHJ7AftJDb+pCe1y+aYmcTrCO2cdfX2hyXQO3UbCv40aUX3p4dwmFd6nzd56/DIsj+Rz3I9A==
+"@greenwood/cli@~0.15.1":
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/@greenwood/cli/-/cli-0.15.1.tgz#6fb3caf355dc0434308c7588e612b997036a77c4"
+  integrity sha512-Kr2dGqFTLNn8mW2P4cXkXZb0YvI6+75CFiczup7SNayFtl3s5wuRHeAXyunb16FJT/QyxVRg1g8p6u8Pnz3Q2w==
   dependencies:
     "@rollup/plugin-node-resolve" "^9.0.0"
     "@rollup/plugin-replace" "^2.3.4"
@@ -315,10 +315,10 @@
     rollup-plugin-terser "^7.0.0"
     unified "^9.2.0"
 
-"@greenwood/plugin-graphql@~0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@greenwood/plugin-graphql/-/plugin-graphql-0.15.0.tgz#23091d7763b0f38487c59efb0423ccd9a447fbbb"
-  integrity sha512-0s6PFgU8Lby4Jszo+L4nXnixlM01WpWcRSGRXTn6UzwZhGQ9TrMPAKgUmEK0Xpm0h6T3u6PtG0AkE6EtVHYRLQ==
+"@greenwood/plugin-graphql@~0.15.1":
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/@greenwood/plugin-graphql/-/plugin-graphql-0.15.1.tgz#302f00d3cdd85dca8ce2379afcf8ddf3f7aa686d"
+  integrity sha512-++8m4TlSKndfqa0bPGQ+lssVlv7Kprem6zXC0iCvjTANVQPHhdzKdnAo9CldE+91r1fX0sHEVgPWQPkOUa++Lg==
   dependencies:
     "@apollo/client" "^3.3.11"
     "@rollup/plugin-alias" "^3.1.2"
@@ -326,10 +326,10 @@
     graphql "^15.5.0"
     graphql-tag "^2.10.1"
 
-"@greenwood/plugin-import-css@~0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@greenwood/plugin-import-css/-/plugin-import-css-0.15.0.tgz#5ddeeedd1c96adc9fb2c91f55b5e4be16e218a72"
-  integrity sha512-BE5WCFypfPawivLlfDWA1VBZSlp04IlPSizUOyfvihBfXomU/oky5ca6Pi3GlXDGlvcn40gvvCGjn6cC/ZbKSg==
+"@greenwood/plugin-import-css@~0.15.1":
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/@greenwood/plugin-import-css/-/plugin-import-css-0.15.1.tgz#c7254448f384881d1b840367393a6de7316b2796"
+  integrity sha512-BKOrq+mwJyzte4pKeKPOopqb57z5pVSZX3qqcIoi0L7NXEH3hvuG052zgS+bjn0Ixg5C7r3O2ap3zlmuznfwWA==
   dependencies:
     rollup-plugin-postcss "^3.1.5"
 
