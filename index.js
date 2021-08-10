@@ -4,11 +4,16 @@ const path = require('path');
 module.exports = () => [{
   type: 'context',
   name: `${packageJson.name}:context`,
-  provider: () => {
+  provider: (options = {}) => {
+    const { name } = packageJson;
+    const baseDistDir = `node_modules/${name}/dist`;
+    const templateLocation = options.__isDevelopment
+      ? path.join(__dirname, `${baseDistDir}/layouts`)
+      : path.join(process.cwd(), 'src/layouts');
 
     return {
       templates: [
-        path.join(__dirname, 'dist/templates')
+        templateLocation
       ]
     };
   }

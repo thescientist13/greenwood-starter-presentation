@@ -1,3 +1,4 @@
+const greenwoodStarterPresentation = require('./index');
 const packageName = require('./package.json').name;
 const path = require('path');
 const pluginGraphQL = require('@greenwood/plugin-graphql');
@@ -25,9 +26,12 @@ module.exports = {
   plugins: [
     ...pluginImportCss(),
     ...pluginGraphQL(),
+    ...greenwoodStarterPresentation({
+      __isDevelopment: true
+    }),
     {
       type: 'resource',
-      name: 'my-theme-pack:resource',
+      name: `${packageName}:resource`,
       provider: (compilation, options) => new MyThemePackDevelopmentResource(compilation, options)
     }
   ]
