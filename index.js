@@ -7,7 +7,7 @@ module.exports = () => [{
   provider: (options = {}) => {
     const { name } = packageJson;
     const baseDistDir = `node_modules/${name}/dist`;
-    const templateLocation = options.__isDevelopment
+    const templateLocation = options.__isDevelopment // eslint-disable-line no-underscore-dangle
       ? path.join(__dirname, `${baseDistDir}/layouts`)
       : path.join(process.cwd(), 'src/layouts');
 
