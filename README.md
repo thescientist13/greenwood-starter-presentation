@@ -237,16 +237,15 @@ The following "global" variables are provided to you to customize and override u
 
 ### Known Issues
 
-There a few open items in our issue tracker as we work to an initial 1.0.0 release
-
+There a few open items in our issue tracker as we work to an [initial 1.0.0 release](https://github.com/thescientist13/greenwood-starter-presentation/milestone/1).  It would also be useful to be familiar with Greenwood's [Theme Pack FAQ](https://www.greenwoodjs.io/guides/theme-packs/#faq) if something isn't working as expected.
 
 ### Upgrades
 
-To stay up to date with this repo depends on how you initialized your repo
+To stay up to date with this repo depends on how you initialized your project or repo.
 
 #### Plugin
 
-If you using the plugin, any upgrades should just be as simple as uprading the version of this plugin in your _package.json_
+If you using the plugin, any upgrades should just be as simple as uprading the version of this plugin in your _package.json_ using your package manager.
 
 #### Git
 
