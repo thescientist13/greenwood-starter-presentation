@@ -4,7 +4,7 @@
 
 ## Overview
 
-Kickstarter for creating and authoring a slide deck from markdown, powered by [**Greenwood**](https://www.greenwoodjs.io/).  ♻️
+Greenwood plugin and ickstarter repo for creating and authoring a slide deck from markdown, powered by [**GreenwoodJS**](https://www.greenwoodjs.io/)!  ♻️
 
 ![greenwood-starter-presentation](./.github/images/greenwood-starter-presentation.png)
 
@@ -20,7 +20,7 @@ This project is principally intended to be consumed by a Greenwood project as a 
 
 To add this plugin to an existing Greenwood project, please do the following:
 
-1. Install the plugin and its dependencies (the is a plan to improve this workflow)
+1. Install the plugin and its dependencies
     ```sh
     $ npm i @greenwood/cli @greenwood/plugin-graphql @greenwood/plugin-import-css greenwood-starter-presentation --save-dev
     $ npm i lit-element 
@@ -92,7 +92,7 @@ This will open a local development server for you at `localhost:1984`.
 ### User Interface
 
 When you are running the app, the following controls and behaviors are available:
-- Updating in any content will live reload the browser for you, preserving the focused slide
+- Updating in any content will live reload the browser for you, preserving the focused slide.
 - Scrolling and clicking any slide in the _Preview List_ on the left will make that slide appear in the _Current Slide) view.
 - Clicking the _Presenter Mode_ button will enable:
     - Full screen mode
@@ -160,6 +160,8 @@ template: theme-statement
 Spicy jalapeno bacon ipsum dolor.
 ```
 
+> See [_pages/slides/6.md_](https://github.com/thescientist13/greenwood-starter-presentation/blob/master/src/pages/slides/1.md) for an example.
+
 #### Title
 ```md
 ---
@@ -172,6 +174,7 @@ template: theme-title
 ```
 
 > See [_pages/slides/1.md_](https://github.com/thescientist13/greenwood-starter-presentation/blob/master/src/pages/slides/1.md) for an example.
+
 
 #### Top Title Image Left
 ```md
@@ -186,7 +189,7 @@ template: theme-top-title-image-left
 ![kitten](https://chuckanddons.com/media/wysiwyg/kitten_blog.jpg)
 ```
 
-> See [_pages/slides/6.md_](https://github.com/thescientist13/greenwood-starter-presentation/blob/master/src/pages/slides/1.md) for an example.
+> See [_pages/slides/7.md_](https://github.com/thescientist13/greenwood-starter-presentation/blob/master/src/pages/slides/1.md) for an example.
 
 
 #### Top title
@@ -200,7 +203,7 @@ template: theme-top-title
 Empty page body with an h1 at the top with `--color-secondary` color behind it as a top bar.
 ```
 
-> See [_pages/slides/6.md_](https://github.com/thescientist13/greenwood-starter-presentation/blob/master/src/pages/slides/2.md) for an example.
+> See [_pages/slides/4.md_](https://github.com/thescientist13/greenwood-starter-presentation/blob/master/src/pages/slides/2.md) for an example.
 
 ----
 
