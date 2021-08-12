@@ -4,7 +4,7 @@
 
 ## Overview
 
-Greenwood plugin and ickstarter repo for creating and authoring a slide deck from markdown, powered by [**GreenwoodJS**](https://www.greenwoodjs.io/)!  ♻️
+Greenwood plugin and kickstarter repo for creating and authoring a slide deck from markdown, powered by [**GreenwoodJS**](https://www.greenwoodjs.io/)!  ♻️
 
 ![greenwood-starter-presentation](./.github/images/greenwood-starter-presentation.png)
 
@@ -55,7 +55,7 @@ To add this plugin to an existing Greenwood project, please do the following:
 
 ### Git (Fork / Clone)
 
-You can also just fork and / or clone this repo from GitHub using `git` .
+You can also just fork and / or clone this repo from GitHub using `git`.
 
 1. Clone the repo
     ```sh
@@ -192,7 +192,7 @@ template: theme-top-title-image-left
 > See [_pages/slides/7.md_](https://github.com/thescientist13/greenwood-starter-presentation/blob/master/src/pages/slides/1.md) for an example.
 
 
-#### Top title
+#### Top Title
 ```md
 ---
 template: theme-top-title
@@ -210,7 +210,7 @@ Empty page body with an h1 at the top with `--color-secondary` color behind it a
 > _Remember, you can always add your own HTML and <style> tags right into markdown.  Additionaly, Greenwood also supports ad-hoc and one off imports of CSS and JS via [frontmatter imports]() for extra customization!_
 
 ### Theming and Design System
-The following "global" variables are provided to you to customize and override using [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
+The following global variables are provided to you to customize and override using [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
 
 ```css
 :root {
@@ -248,7 +248,15 @@ To stay up to date with this repo depends on how you initialized your project or
 
 #### Plugin
 
-If you using the plugin, any upgrades should just be as simple as uprading the version of this plugin in your _package.json_ using your package manager.
+If you using the plugin, any upgrades should just be as simple as uprading the version of this plugin in your _package.json_ using your package manager of choice.
+
+```sh
+# npm
+$ npm install greenwood-starter-presentation
+
+# yarn
+$ yarn upgrade greenwood-starter-presentation --latest
+```
 
 #### Git
 
