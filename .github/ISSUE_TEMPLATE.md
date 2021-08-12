@@ -1,6 +1,6 @@
 ## Type of Change
 - [ ] New Feature Request
-- [ ] Documentation / Website
+- [ ] Documentation
 - [ ] Improvement / Suggestion
 - [ ] Bug
 - [ ] Other (please clarify below)
