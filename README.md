@@ -79,13 +79,23 @@ For those unfamiliar, [CSS Zen Garden](http://www.csszengarden.com/) is a site t
 
 ### Development
 
-To start developing, simply run the `start` command
+To start developing, simply run the `start` script
 
 ```sh
 $ npm start
 ```
 
 This will open a local development server for you at `localhost:1984`.
+
+----
+
+You can preview a production build by using the `serve` script
+
+```sh
+$ npm run serve
+```
+
+You can preview the final site at `localhost:8080`.
 
 ### User Interface
 
