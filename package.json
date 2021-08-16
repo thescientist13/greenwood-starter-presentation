@@ -1,6 +1,6 @@
 {
   "name": "greenwood-starter-presentation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "files": [
@@ -19,14 +19,15 @@
   "license": "ISC",
   "scripts": {
     "clean": "rimraf public .greenwood/",
-    "build": "greenwood build",
+    "build": "yarn build:pre && greenwood build",
+    "build:pre": "mkdir -pv ./node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./src/ ./node_modules/greenwood-starter-presentation/dist",
     "develop": "greenwood develop",
     "dist": "rsync -rv --exclude 'pages/' src/ dist",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint \"*.js\" \"./src/**/*.js\"",
     "lint:css": "stylelint \"./src/**/*.js\", \"./src/**/*.css\"",
     "prepublish": "rm -rf dist/ && mkdir dist/ && yarn dist",
-    "serve": "greenwood serve",
+    "serve": "yarn build:pre && greenwood serve",
     "start": "yarn develop"
   },
   "peerDependencies": {
