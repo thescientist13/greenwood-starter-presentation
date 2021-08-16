@@ -52,13 +52,10 @@ class PresenterMode extends LitElement {
     
     document.addEventListener('keydown', (event) => {
       const keyName = event.key;
-      console.debug('???keydown', keyName);
     
-      // As the user releases the Ctrl key, the key is no longer active,
-      // so event.ctrlKey is false.
       if (keyName === 'ArrowRight' || keyName === 'Spacebar' || keyName === 'Enter') {
         if ((this.index + 1) === this.slides.length) {
-          console.debug('END THE SHOW');
+          // console.debug('END THE SHOW');
         } else {
           this.index = this.index += 1;
           this.setCurrentSlide(this.index);
@@ -68,24 +65,20 @@ class PresenterMode extends LitElement {
           this.index = this.index -= 1;
           this.setCurrentSlide(this.index);
         } else {
-          console.debug('AT THE BEGINNING');
+          // console.debug('AT THE BEGINNING');
         }
       } else if (keyName === 'Escape') {
-        console.debug('END THE SHOW');
+        // TODO console.debug('END THE SHOW');
       }
     }, true);
   }
 
-  enablePresenterMode() {
-    console.debug('enablePresenterMode', this.slides);
-    
+  enablePresenterMode() {    
     this.setCurrentSlide();
     this.shadowRoot.querySelector('div').classList.add('fullscreen-container-on');
-    // TODO this.shadowRoot.querySelector('iframe').focus();
   }
 
   setCurrentSlide(index = 0) {
-    console.debug('setCurrentSlide', index);
     this.shadowRoot.querySelector('iframe').setAttribute('src', this.slides[index].route);
   }
 
