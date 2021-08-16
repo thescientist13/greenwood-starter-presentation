@@ -1,12 +1,10 @@
 # greenwood-starter-presentation
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f1bd02db-7f54-44d1-a3f2-b88b75db8167/deploy-status)](https://app.netlify.com/sites/awesome-bhaskara-b7d76c/deploys)
-
-## Overview
-
 Greenwood plugin and kickstarter repo for creating and authoring a slide deck from markdown, powered by [**GreenwoodJS**](https://www.greenwoodjs.io/)!  ♻️
 
 ![greenwood-starter-presentation](./.github/images/greenwood-starter-presentation.png)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f1bd02db-7f54-44d1-a3f2-b88b75db8167/deploy-status)](https://app.netlify.com/sites/awesome-bhaskara-b7d76c/deploys)
 
 ## Installation
 
@@ -81,13 +79,23 @@ For those unfamiliar, [CSS Zen Garden](http://www.csszengarden.com/) is a site t
 
 ### Development
 
-To start developing, simply run the `start` command
+To start developing, simply run the `start` script
 
 ```sh
 $ npm start
 ```
 
 This will open a local development server for you at `localhost:1984`.
+
+----
+
+You can preview a production build by using the `serve` script
+
+```sh
+$ npm run serve
+```
+
+You can preview the final site at `localhost:8080`.
 
 ### User Interface
 
