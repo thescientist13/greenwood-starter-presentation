@@ -13,11 +13,14 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
 
   async shouldResolve(url) {
     // eslint-disable-next-line no-underscore-dangle
-    return Promise.resolve((process.env.__GWD_COMMAND__ === ' develop') && url.indexOf(`/node_modules/${packageName}/`) >= 0);
+    return Promise.resolve((process.env.__GWD_COMMAND__ === 'develop') && url.indexOf(`/node_modules/${packageName}/`) >= 0);
   }
 
   async resolve(url) {
-    return Promise.resolve(this.getBareUrlPath(url).replace(`/node_modules/${packageName}/dist/`, path.join(process.cwd(), '/src/')));
+    const { userWorkspace } = this.compilation.context;
+    const workspaceUrl = this.getBareUrlPath(url).split(`/node_modules/${packageName}/dist/`)[1];
+
+    return Promise.resolve(path.join(userWorkspace, workspaceUrl));
   }
 }
 
