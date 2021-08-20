@@ -34,20 +34,11 @@ class SlideList extends LitElement {
         z-index: 100;
       }
 
-      /* iframe {
-        height: 200px;
-        width: 10%;
-        margin-left: 15px;
-        margin-top: -10px;
-        transform: scale(1.5);
-        transform-origin: 0 0;
-      } */
-
       span.num {
         float: left
       }
 
-      #wrap {
+      .wrap {
         width: 100%;
         padding: 0;
         filter: drop-shadow(5px 10px 3px gray);
@@ -56,25 +47,18 @@ class SlideList extends LitElement {
         position: relative;
       }
 
-      #wrap > iframe {
+      .wrap > iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        zoom: 0.75;
         -moz-transform: scale(0.75);
         -moz-transform-origin: 0 0;
         -o-transform: scale(0.75);
         -o-transform-origin: 0 0;
         -webkit-transform: scale(0.75);
         -webkit-transform-origin: 0 0;
-      }
-
-      @media screen and (-webkit-min-device-pixel-ratio: 0) {
-        #scaled-frame {
-          zoom: 1;
-        }
       }
     `;
   }
@@ -97,6 +81,19 @@ class SlideList extends LitElement {
     document.dispatchEvent(new CustomEvent('slide-selected', { detail: slide }));
   }
 
+  slideLoaded(slide) {
+    const frame = this.shadowRoot.getElementById(`slide_${slide.id}`);
+    const style = document.createElement('style');
+    
+    style.textContent = `
+      body {
+        zoom: .4;
+      } 
+    `;
+    
+    frame.contentDocument.head.appendChild(style);
+  }
+
   render() {
     const { slides } = this;
     const list = slides.map((slide, index) => {
@@ -105,8 +102,14 @@ class SlideList extends LitElement {
       return html`
         <span class="num">${slideNum})</span>
         <div @click="${() => this.slideSelected(slide)}">
-          <div id="wrap">
-            <iframe id="scaled-frame" src="${slide.route}" loading="lazy"></iframe>
+          <div class="wrap">
+            <iframe
+              id="slide_${slide.id}"
+              src="${slide.route}"  
+              class="scaled-frame"
+              @load="${() => this.slideLoaded(slide) }"
+              loading="lazy">
+            </iframe>
           </div>
           <div class="iframe-screen"></div>
         </div>
