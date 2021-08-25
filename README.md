@@ -102,9 +102,9 @@ You can preview the final site at `localhost:8080`.
 When you are running the app, the following controls and behaviors are available:
 - Updating in any content will live reload the browser for you, preserving the focused slide.
 - Scrolling and clicking any slide in the _Preview List_ on the left will make that slide appear in the _Current Slide) view.
-- Clicking the _Presenter Mode_ button will enable:
-    - Full screen mode
-    - Navigate left and right using arrow keys
+- Clicking the _Presenter Mode_ button will enable Full Screen mode:
+  - Navigate left and right using the left and right arrow keys
+  - To exit presenter mode, hit the ESC key
 
 ### Slide Templates and Layouts
 
