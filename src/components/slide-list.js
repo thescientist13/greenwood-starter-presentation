@@ -10,7 +10,6 @@ class SlideList extends LitElement {
     };
   }
 
-  // TODO preserve aspect ratio
   static get styles() {
     return css`
       :host {
