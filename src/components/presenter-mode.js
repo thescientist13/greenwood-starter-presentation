@@ -50,23 +50,13 @@ class PresenterMode extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     
+    window.addEventListener('message', (postMessage) => {
+      this.slideNavigationKeyHander(postMessage.data);
+    });
+
     document.addEventListener('keydown', (event) => {
-      const keyName = event.key;
-    
-      if (keyName === 'ArrowRight' || keyName === 'Spacebar' || keyName === 'Enter') {
-        if ((this.index + 1) !== this.slides.length) {
-          this.index = this.index += 1;
-          this.setCurrentSlide(this.index);
-        }
-      } else if (keyName === 'ArrowLeft') {
-        if (this.index > 0) {
-          this.index = this.index -= 1;
-          this.setCurrentSlide(this.index);
-        }
-      } else if (keyName === 'Escape') {
-        this.shadowRoot.querySelector('div').classList.remove('fullscreen-container-on');
-      }
-    }, true);
+      this.slideNavigationKeyHander(event.key);
+    });
   }
 
   enablePresenterMode() {    
@@ -78,6 +68,22 @@ class PresenterMode extends LitElement {
     this.shadowRoot.querySelector('iframe').setAttribute('src', this.slides[index].route);
   }
 
+  slideNavigationKeyHander(keyName) {  
+    if (keyName === 'ArrowRight' || keyName === 'Spacebar' || keyName === 'Enter') {
+      if ((this.index + 1) !== this.slides.length) {
+        this.index = this.index += 1;
+        this.setCurrentSlide(this.index);
+      }
+    } else if (keyName === 'ArrowLeft') {
+      if (this.index > 0) {
+        this.index = this.index -= 1;
+        this.setCurrentSlide(this.index);
+      }
+    } else if (keyName === 'Escape') {
+      this.shadowRoot.querySelector('div').classList.remove('fullscreen-container-on');
+    }
+  }
+  
   render() {
     return html`
       <button @click=${this.enablePresenterMode}>Presenter Mode</button>
