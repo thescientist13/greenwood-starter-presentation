@@ -54,9 +54,7 @@ class PresenterMode extends LitElement {
       const keyName = event.key;
     
       if (keyName === 'ArrowRight' || keyName === 'Spacebar' || keyName === 'Enter') {
-        if ((this.index + 1) === this.slides.length) {
-          // console.debug('END THE SHOW');
-        } else {
+        if ((this.index + 1) !== this.slides.length) {
           this.index = this.index += 1;
           this.setCurrentSlide(this.index);
         }
@@ -64,11 +62,9 @@ class PresenterMode extends LitElement {
         if (this.index > 0) {
           this.index = this.index -= 1;
           this.setCurrentSlide(this.index);
-        } else {
-          // console.debug('AT THE BEGINNING');
         }
       } else if (keyName === 'Escape') {
-        // TODO console.debug('END THE SHOW');
+        this.shadowRoot.querySelector('div').classList.remove('fullscreen-container-on');
       }
     }, true);
   }
