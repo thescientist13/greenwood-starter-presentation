@@ -5,8 +5,6 @@
     <link rel="stylesheet" href="/node_modules/greenwood-starter-presentation/dist/styles/theme.css"></link>
     <link rel="stylesheet" href="/node_modules/greenwood-starter-presentation/dist/styles/main.css"></link>
 
-    <!-- "Full Text Slide" from examples -->
-
     <style>
 
       :root {
@@ -15,8 +13,8 @@
       div#container {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        height: 90vh;
+        text-align: left;
+        height: 95vh;
         padding-left: 2rem;
         width: 100%;
         margin: 0;
@@ -43,6 +41,8 @@
       <content-outlet></content-outlet>
       <hr />
     </div>
+    
+    <script type="module" src="/node_modules/greenwood-starter-presentation/dist/components/link-target.js"></script>
   </body>
 
 </html>
