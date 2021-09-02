@@ -64,7 +64,7 @@ You can also just fork and / or clone this repo from GitHub using `git`.
 1. Change into the project directory and install dependencies
     ```sh
     $ cd greenwood-starter-presentation
-    $ npm i
+    $ npm install
     ```
 
 ## Usage
