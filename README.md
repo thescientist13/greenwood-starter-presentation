@@ -16,16 +16,15 @@ This project is principally intended to be consumed by a Greenwood project as a 
 
 > Check out these links to learn more [about Greenwood](https://www.greenwoodjs.io/about/) as well as the [Quick start guide](https://www.greenwoodjs.io/getting-started/).
 
-To add this plugin to an existing Greenwood project, please do the following:
+To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` has already been installed), please do the following:
 
 1. Install the plugin and its dependencies
     ```sh
-    $ npm i @greenwood/cli @greenwood/plugin-graphql @greenwood/plugin-import-css greenwood-starter-presentation --save-dev
-    $ npm i lit-element 
+    $ npm install @greenwood/plugin-import-css greenwood-starter-presentation --save-dev
+    $ npm install lit-element 
     ```
 1. Add this plugin and all dependent plugins to your _greenwood.config.js_
     ```js
-    const pluginGraphQL = require('@greenwood/plugin-graphql');
     const pluginImportCss = require('@greenwood/plugin-import-css');
     const pluginThemePresentation = require('greenwood-starter-presentation');
 
@@ -35,7 +34,6 @@ To add this plugin to an existing Greenwood project, please do the following:
       
       plugins: [
         ...pluginImportCss(),
-        ...pluginGraphQL(),
         ...pluginThemePresentation()
       ]
 

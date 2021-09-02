@@ -5,21 +5,14 @@
     <script type="module" src="/node_modules/greenwood-starter-presentation/dist/components/slide-list.js"></script>
     <script type="module" src="/node_modules/greenwood-starter-presentation/dist/components/slide-viewer.js"></script>
     <script type="module">
-      import client from '@greenwood/plugin-graphql/core/client';
-      import GraphQuery from '@greenwood/plugin-graphql/queries/graph';
-      
-      client.query({
-        query: GraphQuery
-      }).then((response) => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedSlideId = urlParams.get('selectedSlideId');
-        const slides = response.data.graph.filter(slide => slide.id !== 'index');
-        const currentSlideIndex = selectedSlideId ? slides.findIndex(slide => slide.id === selectedSlideId) : 0;
+      fetch('/graph.json')
+        .then((response) => response.json())
+        .then((response) => {
+          const slides = response.filter(slide => slide.id !== 'index');
 
-        document.querySelector('presenter-mode').setAttribute('slides', JSON.stringify(slides));
-        document.querySelector('slide-list').setAttribute('slides', JSON.stringify(slides));
-        document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[currentSlideIndex]));
-      });
+          document.querySelector('slide-list').setAttribute('slides', JSON.stringify(slides));
+          document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[0]));
+        });
     </script>
 
     <script>

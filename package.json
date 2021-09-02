@@ -36,7 +36,6 @@
   },
   "peerDependencies": {
     "@greenwood/cli": "~0.15.0",
-    "@greenwood/plugin-graphql": "~0.15.0",
     "@greenwood/plugin-import-css": "~0.15.0"
   },
   "dependencies": {
@@ -44,7 +43,6 @@
   },
   "devDependencies": {
     "@greenwood/cli": "~0.15.2",
-    "@greenwood/plugin-graphql": "~0.15.2",
     "@greenwood/plugin-import-css": "~0.15.2",
     "eslint": "^7.25.0",
     "rimraf": "^3.0.2",
