@@ -1,7 +1,6 @@
 const greenwoodStarterPresentation = require('./index');
 const packageName = require('./package.json').name;
 const path = require('path');
-const pluginGraphQL = require('@greenwood/plugin-graphql');
 const pluginImportCss = require('@greenwood/plugin-import-css');
 const { ResourceInterface } = require('@greenwood/cli/src/lib/resource-interface');
 
@@ -29,7 +28,6 @@ module.exports = {
   
   plugins: [
     ...pluginImportCss(),
-    ...pluginGraphQL(),
     ...greenwoodStarterPresentation({
       __isDevelopment: true
     }),
