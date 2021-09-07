@@ -1,6 +1,6 @@
 {
   "name": "greenwood-starter-presentation",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A Greenwood plugin and general purpose starter kit for creating slide decks and presentations from markdown.",
   "main": "index.js",
   "files": [
@@ -30,7 +30,7 @@
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint \"*.js\" \"./src/**/*.js\"",
     "lint:css": "stylelint \"./src/**/*.js\", \"./src/**/*.css\"",
-    "prepublish": "rm -rf dist/ && mkdir dist/ && yarn dist",
+    "prepublishOnly": "rm -rf dist/ && mkdir dist/ && yarn dist",
     "serve": "yarn build:pre && greenwood serve",
     "start": "yarn develop"
   },
