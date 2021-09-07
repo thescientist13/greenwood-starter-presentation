@@ -30,7 +30,7 @@
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint \"*.js\" \"./src/**/*.js\"",
     "lint:css": "stylelint \"./src/**/*.js\", \"./src/**/*.css\"",
-    "prepublish": "rm -rf dist/ && mkdir dist/ && yarn dist",
+    "prepublishOnly": "rm -rf dist/ && mkdir dist/ && yarn dist",
     "serve": "yarn build:pre && greenwood serve",
     "start": "yarn develop"
   },
