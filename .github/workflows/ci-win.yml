@@ -1,0 +1,28 @@
+name: Continuous Integration Windows
+
+on: [pull_request]
+
+jobs:
+
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node: [14]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Installing project dependencies
+      run: |
+        yarn install --frozen-lockfile
+    - name: Lint
+      run: |
+        yarn lint
+    - name: Build
+      run: |
+        yarn clean && yarn build:win
