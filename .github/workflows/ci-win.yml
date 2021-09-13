@@ -7,16 +7,11 @@ jobs:
   build:
     runs-on: windows-latest
 
-    defaults:
-      run:
-        shell: wsl-bash {0}
-
     strategy:
       matrix:
         node: [14]
 
     steps:
-    - uses: Vampire/setup-wsl@v1
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
