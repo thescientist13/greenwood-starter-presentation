@@ -95,6 +95,8 @@ $ npm run serve
 
 You can preview the final site at `localhost:8080`.
 
+> If you are using Windows, run `npm run serve:win`
+
 ### User Interface
 
 When you are running the app, the following controls and behaviors are available:

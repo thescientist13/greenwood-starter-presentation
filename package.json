@@ -23,8 +23,10 @@
   "license": "ISC",
   "scripts": {
     "clean": "rimraf public .greenwood/",
+    "build:win": "npm run build:pre-win && greenwood build",
     "build": "npm run build:pre && greenwood build",
     "build:pre": "mkdir -pv ./node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./src/ ./node_modules/greenwood-starter-presentation/dist",
+    "build:pre-win": "mkdir -pv ./node_modules/greenwood-starter-presentation/dist",
     "develop": "greenwood develop",
     "dist": "rsync -rv --exclude 'pages/' src/ dist",
     "lint": "npm run lint:js && npm run lint:css",
@@ -32,6 +34,7 @@
     "lint:css": "stylelint \"./src/**/*.js\", \"./src/**/*.css\"",
     "prepublishOnly": "rm -rf dist/ && mkdir dist/ && npm run dist",
     "serve": "npm run build:pre && greenwood serve",
+    "serve:win": "npm run build:pre-win && greenwood serve",
     "start": "npm run develop"
   },
   "peerDependencies": {
