@@ -8,6 +8,10 @@
       fetch('/graph.json')
         .then((response) => response.json())
         .then((response) => {
+          // auto generated default page by Greenwood
+          const hideListIds = ['404'];
+          return response.filter(slide => hideListIds.indexOf(slide.id) < 0)
+        }).then((response) => {
           const urlParams = new URLSearchParams(window.location.search);
           const selectedSlideId = urlParams.get('selectedSlideId');
           const slides = response.filter(slide => slide.id !== 'index');
