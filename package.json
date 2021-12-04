@@ -3,6 +3,7 @@
   "version": "0.4.2",
   "description": "A Greenwood plugin and general purpose starter kit for creating slide decks and presentations from markdown.",
   "main": "index.js",
+  "type": "module",
   "files": [
     "dist/"
   ],
@@ -45,8 +46,10 @@
     "lit-element": "^2.4.0"
   },
   "devDependencies": {
-    "@greenwood/cli": "~0.18.0",
-    "@greenwood/plugin-import-css": "~0.18.0",
+    "@babel/core": "^7.16.0",
+    "@greenwood/cli": "~0.20.0-alpha.0",
+    "@greenwood/plugin-import-css": "~0.20.0-alpha.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.25.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",
