@@ -1,8 +1,10 @@
-const greenwoodStarterPresentation = require('./index');
-const packageName = require('./package.json').name;
-const path = require('path');
-const pluginImportCss = require('@greenwood/plugin-import-css');
-const { ResourceInterface } = require('@greenwood/cli/src/lib/resource-interface');
+import fs from 'fs';
+import { greenwoodThemeStarterPresentation } from './index.js';
+import { greenwoodPluginImportCss } from '@greenwood/plugin-import-css';
+import path from 'path';
+import { ResourceInterface } from '@greenwood/cli/src/lib/resource-interface.js';
+
+const packageName = JSON.parse(fs.readFileSync(path.join(process.cwd(), './package.json'), 'utf-8')).name;
 
 class MyThemePackDevelopmentResource extends ResourceInterface {
   constructor(compilation, options) {
@@ -23,12 +25,12 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
   }
 }
 
-module.exports = {
+export default {
   title: 'My Presentation',
   
   plugins: [
-    ...pluginImportCss(),
-    ...greenwoodStarterPresentation({
+    ...greenwoodPluginImportCss(),
+    ...greenwoodThemeStarterPresentation({
       __isDevelopment: true
     }),
     {

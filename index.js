@@ -1,13 +1,16 @@
-const packageJson = require('./package.json');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath, URL } from 'url';
 
-module.exports = (options = {}) => [{
+const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
+
+const greenwoodThemeStarterPresentation = (options = {}) => [{
   type: 'context',
   name: `${packageJson.name}:context`,
   provider: (compilation) => {
     const templateLocation = options.__isDevelopment // eslint-disable-line no-underscore-dangle
       ? path.join(compilation.context.userWorkspace, 'layouts')
-      : path.join(__dirname, 'dist/layouts');
+      : fileURLToPath(new URL('dist/layouts', import.meta.url));
 
     return {
       templates: [
@@ -16,3 +19,7 @@ module.exports = (options = {}) => [{
     };
   }
 }];
+
+export {
+  greenwoodThemeStarterPresentation
+};

@@ -25,16 +25,16 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
     ```
 1. Add this plugin and all dependent plugins to your _greenwood.config.js_
     ```js
-    const pluginImportCss = require('@greenwood/plugin-import-css');
-    const pluginThemePresentation = require('greenwood-starter-presentation');
+    import { greenwoodPluginImportCss } from '@greenwood/plugin-import-css';
+    import { greenwoodThemeStarterPresentation } from 'greenwood-starter-presentation';
 
-    module.exports = {
+    export default {
       .
       .
       
       plugins: [
-        ...pluginImportCss(),
-        ...pluginThemePresentation()
+        ...greenwoodPluginImportCss(),
+        ...greenwoodThemeStarterPresentation()
       ]
 
     };
