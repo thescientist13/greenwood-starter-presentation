@@ -25,9 +25,7 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
   }
 }
 
-export default {
-  title: 'My Presentation',
-  
+export default {  
   plugins: [
     ...greenwoodPluginImportCss(),
     ...greenwoodThemeStarterPresentation({

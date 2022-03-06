@@ -208,10 +208,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@greenwood/cli@~0.23.0":
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/@greenwood/cli/-/cli-0.23.0.tgz#46a6a301de689a9053330f62469cb880ca3207ec"
-  integrity sha512-4IckraYIlTw1dOqi+0giJoq2czspiRYtlsok6kOqF6p0pJL0RPuEiwH4Hvr79IKQucpV24bHfLUMViDnatoNPQ==
+"@greenwood/cli@~0.24.1":
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/@greenwood/cli/-/cli-0.24.1.tgz#83d9b33c186587144291d73f6578a663376baeb5"
+  integrity sha512-WogH+jFxYeMMOBcpV6wwcjrhx2T5zQmC6qpDYpkln79cZYh7WaSzL/CtdizvDBizk9L7/UPirYYXpVDefUyAHQ==
   dependencies:
     "@rollup/plugin-node-resolve" "^13.0.0"
     "@rollup/plugin-replace" "^2.3.4"
@@ -220,7 +220,7 @@
     acorn-walk "^8.0.0"
     commander "^2.20.0"
     cssnano "^5.0.11"
-    es-module-shims "^0.5.2"
+    es-module-shims "^1.2.0"
     front-matter "^4.0.2"
     koa "^2.13.0"
     livereload "^0.9.1"
@@ -239,10 +239,10 @@
     rollup-plugin-terser "^7.0.0"
     unified "^9.2.0"
 
-"@greenwood/plugin-import-css@~0.23.0":
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/@greenwood/plugin-import-css/-/plugin-import-css-0.23.0.tgz#29c232669956929b9ca8dd90575af6520fd1bf60"
-  integrity sha512-n/CmjTQGQm0uPCETjLAoQv8n2qSspAE5pVAzeK5DBeJPNi/jngaWMv3YbOgd8LuoKrghefdAB37KS5pZCgwubA==
+"@greenwood/plugin-import-css@~0.24.1":
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/@greenwood/plugin-import-css/-/plugin-import-css-0.24.1.tgz#8749648b0cf32599202c11ac07fa8a4e94e00e59"
+  integrity sha512-MJjLQSOpJVf/YUPMePom/Qy05ijhuCkEdHXqAHtl216EJu6e/YPxtlaWTt13s6fVPeWQhFK9w3GLDOLSoBkrxQ==
   dependencies:
     rollup-plugin-postcss "^4.0.2"
 
@@ -1241,10 +1241,10 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-es-module-shims@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/es-module-shims/-/es-module-shims-0.5.2.tgz#9bea003e84a11bdc052b9f52464671176509f520"
-  integrity sha512-cXSy7EPyZc6Iq4AjyWXMqMURXgFguduPN7nxtfI0WsV4C83wNHrdxf0oxhzDPZU/8zB6YFllR24HMG/EBVN/GQ==
+es-module-shims@^1.2.0:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/es-module-shims/-/es-module-shims-1.4.7.tgz#301eeee95d083aa6136f6e292eff2d8018881ac4"
+  integrity sha512-qYSDOnqPKoBoMGlpY8kQj1v3mVPpTfcob9a2xIIFoNgRlaVuI59yFODKkYrJ3nkz3z7d4dGpiUMRxes8jgiNRQ==
 
 escalade@^3.1.1:
   version "3.1.1"
