@@ -21,7 +21,7 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
 1. Install the plugin and its dependencies
     ```sh
     $ npm install @greenwood/plugin-import-css greenwood-starter-presentation --save-dev
-    $ npm install lit-element 
+    $ npm install lit
     ```
 1. Add this plugin and all dependent plugins to your _greenwood.config.js_
     ```js
@@ -39,6 +39,7 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
 
     };
     ```
+1. Make sure to add `type: "module"` to uour _package.json_
 1. Create a markdown file in your _src/pages_ directory called _index.md_ with these contents
     ```md
     ---

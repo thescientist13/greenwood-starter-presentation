@@ -39,11 +39,11 @@
     "start": "npm run develop"
   },
   "peerDependencies": {
-    "@greenwood/cli": "~0.15.0",
-    "@greenwood/plugin-import-css": "~0.15.0"
+    "@greenwood/cli": "~0.25.0",
+    "@greenwood/plugin-import-css": "~0.25.0"
   },
   "dependencies": {
-    "lit-element": "^2.4.0"
+    "lit": "^2.2.3"
   },
   "devDependencies": {
     "@greenwood/cli": "~0.25.0",
