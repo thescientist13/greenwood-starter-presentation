@@ -1,4 +1,4 @@
-import { css, html, LitElement, unsafeCSS } from 'lit-element';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import themeCss from '../styles/theme.css?type=css';
 
 class PresenterMode extends LitElement {
