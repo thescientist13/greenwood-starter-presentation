@@ -4,6 +4,7 @@
     <script type="module" src="/node_modules/greenwood-starter-presentation/dist/components/presenter-mode.js"></script>
     <script type="module" src="/node_modules/greenwood-starter-presentation/dist/components/slide-list.js"></script>
     <script type="module" src="/node_modules/greenwood-starter-presentation/dist/components/slide-viewer.js"></script>
+    <script type="module" src="/node_modules/greenwood-starter-presentation/dist/components/export-to-pdf.js"></script>
     <script type="module">
       fetch('/graph.json')
         .then((response) => response.json())
@@ -17,6 +18,7 @@
           const slides = response.filter(slide => slide.id !== 'index');
           const currentSlideIndex = selectedSlideId ? slides.findIndex(slide => slide.id === selectedSlideId) : 0;
 
+          document.querySelector('export-pdf').setAttribute('slides', JSON.stringify(slides));
           document.querySelector('presenter-mode').setAttribute('slides', JSON.stringify(slides));
           document.querySelector('slide-list').setAttribute('slides', JSON.stringify(slides));
           document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slides[currentSlideIndex]));
@@ -88,6 +90,7 @@
     <main>
       <section>
         <header>
+          <export-pdf></export-pdf>
           <presenter-mode></presenter-mode>
         </header>
       </section>
