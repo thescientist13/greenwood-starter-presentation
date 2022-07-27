@@ -46,8 +46,8 @@
     "lit": "^2.2.3"
   },
   "devDependencies": {
-    "@greenwood/cli": "~0.26.0-alpha.1",
-    "@greenwood/plugin-import-css": "~0.26.0-alpha.1",
+    "@greenwood/cli": "~0.26.0",
+    "@greenwood/plugin-import-css": "~0.26.0",
     "eslint": "^8.4.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",
