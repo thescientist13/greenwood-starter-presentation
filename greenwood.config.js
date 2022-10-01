@@ -27,8 +27,8 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
 
 export default {  
   plugins: [
-    ...greenwoodPluginImportCss(),
-    ...greenwoodThemeStarterPresentation({
+    greenwoodPluginImportCss(),
+    greenwoodThemeStarterPresentation({
       __isDevelopment: true
     }),
     {
