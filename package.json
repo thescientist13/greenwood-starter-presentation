@@ -28,7 +28,7 @@
     "build:pre": "mkdir -pv ./node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./src/ ./node_modules/greenwood-starter-presentation/dist",
     "build:post": "mkdir -pv ./public/node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./node_modules/greenwood-starter-presentation/dist public/node_modules/greenwood-starter-presentation/dist",
     "build:win": "npm run build:win-pre && greenwood build && npm run build:win-post",
-    "build:win-pre": "mkdir \\node_modules\\greenwood-starter-presentation\\dist && xcopy \\src \\public\\node_modules\\greenwood-starter-presentation\\dist\\ /e",
+    "build:win-pre": "mkdir \\node_modules\\greenwood-starter-presentation\\dist && xcopy \\src \\node_modules\\greenwood-starter-presentation\\dist\\ /e",
     "build:win-post": "mkdir \\public\\node_modules\\greenwood-starter-presentation\\dist && xcopy \\node_modules\\greenwood-starter-presentation\\dist\\ \\public\\node_modules\\greenwood-starter-presentation\\dist /e",
     "develop": "greenwood develop",
     "dist": "rsync -rv --exclude 'pages/' src/ dist",
