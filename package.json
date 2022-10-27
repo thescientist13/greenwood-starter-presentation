@@ -24,12 +24,12 @@
   "license": "ISC",
   "scripts": {
     "clean": "rimraf public .greenwood/",
-    "build:win": "npm run build:pre-win && greenwood build && npm run build:post-win",
     "build": "npm run build:pre && greenwood build && npm run build:post",
     "build:pre": "mkdir -pv ./node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./src/ ./node_modules/greenwood-starter-presentation/dist",
-    "build:pre-win": "mkdir \\node_modules\\greenwood-starter-presentation\\dist && xcopy \\src \\public\\node_modules\\greenwood-starter-presentation\\dist\\ /e",
     "build:post": "mkdir -pv ./public/node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./node_modules/greenwood-starter-presentation/dist public/node_modules/greenwood-starter-presentation/dist",
-    "build:post-win": "mkdir \\public\\node_modules\\greenwood-starter-presentation\\dist && xcopy \\node_modules\\greenwood-starter-presentation\\dist\\ \\public\\node_modules\\greenwood-starter-presentation\\dist /e",
+    "build:win": "npm run build:win-pre && greenwood build && npm run build:win-post",
+    "build:win-pre": "mkdir \\node_modules\\greenwood-starter-presentation\\dist && xcopy \\src \\public\\node_modules\\greenwood-starter-presentation\\dist\\ /e",
+    "build:win-post": "mkdir \\public\\node_modules\\greenwood-starter-presentation\\dist && xcopy \\node_modules\\greenwood-starter-presentation\\dist\\ \\public\\node_modules\\greenwood-starter-presentation\\dist /e",
     "develop": "greenwood develop",
     "dist": "rsync -rv --exclude 'pages/' src/ dist",
     "lint": "npm run lint:js && npm run lint:css",
@@ -37,7 +37,7 @@
     "lint:css": "stylelint \"./src/**/*.js\", \"./src/**/*.css\"",
     "prepublishOnly": "rm -rf dist/ && mkdir dist/ && npm run dist",
     "serve": "npm run build && greenwood serve",
-    "serve:win": "npm run build-win && greenwood serve",
+    "serve:win": "npm run build:win && greenwood serve",
     "start": "npm run develop"
   },
   "peerDependencies": {
