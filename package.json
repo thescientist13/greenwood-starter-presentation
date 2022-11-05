@@ -24,11 +24,10 @@
   "license": "ISC",
   "scripts": {
     "clean": "rimraf public .greenwood/",
-    "build": "npm run build:pre && greenwood build && npm run build:post",
+    "build:win": "npm run build:pre-win && greenwood build",
+    "build": "npm run build:pre && greenwood build",
     "build:pre": "mkdir -pv ./node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./src/ ./node_modules/greenwood-starter-presentation/dist",
-    "build:post": "mkdir -pv ./public/node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./node_modules/greenwood-starter-presentation/dist public/node_modules/greenwood-starter-presentation/dist",
-    "build:win": "npm run build:win-pre && greenwood build && npm run build:win-post",
-    "build:win-pre": "mkdir node_modules\\greenwood-starter-presentation\\dist && xcopy src node_modules\\greenwood-starter-presentation\\dist\\ /e",
+    "build:pre-win": "rimraf node_modules\\greenwood-starter-presentation\\dist && mkdir node_modules\\greenwood-starter-presentation\\dist && xcopy src node_modules\\greenwood-starter-presentation\\dist\\ /e",
     "build:win-post": "mkdir public\\node_modules\\greenwood-starter-presentation\\dist && xcopy node_modules\\greenwood-starter-presentation\\dist\\ public\\node_modules\\greenwood-starter-presentation\\dist /e",
     "develop": "greenwood develop",
     "dist": "rsync -rv --exclude 'pages/' src/ dist",
@@ -36,8 +35,8 @@
     "lint:js": "eslint \"*.js\" \"./src/**/*.js\"",
     "lint:css": "stylelint \"./src/**/*.js\", \"./src/**/*.css\"",
     "prepublishOnly": "rm -rf dist/ && mkdir dist/ && npm run dist",
-    "serve": "npm run build && greenwood serve",
-    "serve:win": "npm run build:win && greenwood serve",
+    "serve": "npm run build:pre && greenwood serve",
+    "serve:win": "npm run build:pre-win && greenwood serve",
     "start": "npm run develop"
   },
   "peerDependencies": {
@@ -48,8 +47,8 @@
     "lit": "^2.2.3"
   },
   "devDependencies": {
-    "@greenwood/cli": "~0.27.0-alpha.1",
-    "@greenwood/plugin-import-css": "~0.27.0-alpha.1",
+    "@greenwood/cli": "~0.27.0-alpha.2",
+    "@greenwood/plugin-import-css": "~0.27.0-alpha.2",
     "eslint": "^8.4.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",
