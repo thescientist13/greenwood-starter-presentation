@@ -28,7 +28,6 @@
     "build": "npm run build:pre && greenwood build",
     "build:pre": "mkdir -pv ./node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./src/ ./node_modules/greenwood-starter-presentation/dist",
     "build:pre-win": "rimraf node_modules\\greenwood-starter-presentation\\dist && mkdir node_modules\\greenwood-starter-presentation\\dist && xcopy src node_modules\\greenwood-starter-presentation\\dist\\ /e",
-    "build:win-post": "mkdir public\\node_modules\\greenwood-starter-presentation\\dist && xcopy node_modules\\greenwood-starter-presentation\\dist\\ public\\node_modules\\greenwood-starter-presentation\\dist /e",
     "develop": "greenwood develop",
     "dist": "rsync -rv --exclude 'pages/' src/ dist",
     "lint": "npm run lint:js && npm run lint:css",
