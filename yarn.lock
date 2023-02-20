@@ -208,10 +208,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@greenwood/cli@~0.28.0-alpha.1":
-  version "0.28.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@greenwood/cli/-/cli-0.28.0-alpha.1.tgz#77df1b475af224ca3405788861606a5b486bfe56"
-  integrity sha512-ZrefUzySESn1vDdFt8Opjgsut+o3JeT+TMLiUSq3DJ/xNP5H7DoxucDsk5uWRZxaPiVrwLMkvPfgTtGpHf8oAw==
+"@greenwood/cli@~0.28.0-alpha.2":
+  version "0.28.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@greenwood/cli/-/cli-0.28.0-alpha.2.tgz#5125fe595666cc3c93e78eb7abeb56233e4b0f0b"
+  integrity sha512-+iyVIYcRM6Qd0w8DPHyuFs8NnMLLmt5EKODZaGXAk7t+VnvbkZKmGYuGPUHJWaojB3EJSBlw6pqRXbSlkjCfkA==
   dependencies:
     "@rollup/plugin-node-resolve" "^13.0.0"
     "@rollup/plugin-replace" "^2.3.4"
@@ -235,10 +235,10 @@
     unified "^9.2.0"
     wc-compiler "~0.6.1"
 
-"@greenwood/plugin-import-css@~0.28.0-alpha.1":
-  version "0.28.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@greenwood/plugin-import-css/-/plugin-import-css-0.28.0-alpha.1.tgz#54f5b99bc7a1314688fc0dc3a42c9b0d9c5d0c8c"
-  integrity sha512-XHQNFb83VHhBtRe4jQPrlkxmEJj6DVJT2R6Ut3dWImQ6Imo/FHL8XLR0K+MdC7TKQcCSJ+ptcURRyeWi0v8HAQ==
+"@greenwood/plugin-import-css@~0.28.0-alpha.2":
+  version "0.28.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@greenwood/plugin-import-css/-/plugin-import-css-0.28.0-alpha.2.tgz#def500aeca4411f560fa121a424570dc76f6a60d"
+  integrity sha512-Eq001Dk/NJOlk4Y3NUzO+Qb7R5jSBPrqly5Y1X4fjLlFe13eKDEAiRpvNsi+kr6y114TOLQBPx//o439btmMlA==
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.2"
