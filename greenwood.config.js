@@ -22,7 +22,6 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
     const { userWorkspace } = this.compilation.context;
     const workspaceUrl = pathname.split(`/node_modules/${packageName}/dist/`)[1];
 
-    console.debug({ workspaceUrl });
     return new Request(new URL(`./${workspaceUrl}`, userWorkspace));
   }
 }
