@@ -1,6 +1,6 @@
 # greenwood-starter-presentation
 
-Greenwood plugin and kickstarter repo for creating and authoring a slide deck from markdown, powered by [**GreenwoodJS**](https://www.greenwoodjs.io/)!  ♻️
+Greenwood plugin and kick-starter repo for creating and authoring a slide deck from markdown, powered by [**GreenwoodJS**](https://www.greenwoodjs.io/)!  ♻️
 
 ![greenwood-starter-presentation](./.github/images/greenwood-starter-presentation.png)
 
@@ -21,7 +21,6 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
 1. Install the plugin and its dependencies
     ```sh
     $ npm install @greenwood/plugin-import-css greenwood-starter-presentation --save-dev
-    $ npm install lit
     ```
 1. Add this plugin and all dependent plugins to your _greenwood.config.js_
     ```js
@@ -29,12 +28,11 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
     import { greenwoodThemeStarterPresentation } from 'greenwood-starter-presentation';
 
     export default {
-      .
-      .
+      // ...
       
       plugins: [
-        ...greenwoodPluginImportCss(),
-        ...greenwoodThemeStarterPresentation()
+        greenwoodPluginImportCss(),
+        greenwoodThemeStarterPresentation()
       ]
 
     };
@@ -109,7 +107,7 @@ When you are running the app, the following controls and behaviors are available
 
 ### Slide Templates and Layouts
 
-To organize your slide content, this plugin provides the following template that can be specificed in markdown file's frontmatter.
+To organize your slide content, this plugin provides the following template that can be specified in markdown file's frontmatter.
 
 ex.
 ```md
@@ -216,7 +214,7 @@ Empty page body with an h1 at the top with `--color-secondary` color behind it a
 
 ----
 
-> _Remember, you can always add your own HTML and <style> tags right into markdown.  Additionaly, Greenwood also supports ad-hoc and one off imports of CSS and JS via [frontmatter imports]() for extra customization!_
+> _Remember, you can always add your own HTML and <style> tags right into markdown.  Additionally, Greenwood also supports ad-hoc and one off imports of CSS and JS via [frontmatter imports](https://www.greenwoodjs.io/docs/front-matter/#imports) for extra customization!_
 
 ### Theming and Design System
 The following global variables are provided to you to customize and override using [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
@@ -257,7 +255,7 @@ To stay up to date with this repo depends on how you initialized your project or
 
 #### Plugin
 
-If you using the plugin, any upgrades should just be as simple as uprading the version of this plugin in your _package.json_ using your package manager of choice.
+If you using the plugin, any upgrades should just be as simple as upgrading the version of this plugin in your _package.json_ using your package manager of choice.
 
 ```sh
 # npm
@@ -277,7 +275,7 @@ $ git pull origin master
 If you forked, make sure to add this repo as an upstream and pull changes in as needed
 ```sh
 # use SSH (recommended) or HTTPS depending on your needs
-$ git remote add upsteam git@github.com:thescientist13/greenwood-starter-presentation.git
+$ git remote add upstream git@github.com:thescientist13/greenwood-starter-presentation.git
 $ git fetch upstream master
 $ git checkout master
 $ git merge upstream/master
