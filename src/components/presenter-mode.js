@@ -1,11 +1,7 @@
-import themeCss from '../styles/theme.css?type=css';
-
 const template = document.createElement('template');
 
 template.innerHTML = `
   <style>
-    ${themeCss}
-
     .fullscreen-container {
       display: none;
     }

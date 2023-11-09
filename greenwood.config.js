@@ -1,6 +1,5 @@
 import fs from 'fs';
 import { greenwoodThemeStarterPresentation } from './index.js';
-import { greenwoodPluginImportCss } from '@greenwood/plugin-import-css';
 import path from 'path';
 import { ResourceInterface } from '@greenwood/cli/src/lib/resource-interface.js';
 
@@ -28,7 +27,6 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
 
 export default {  
   plugins: [
-    greenwoodPluginImportCss(),
     greenwoodThemeStarterPresentation({
       __isDevelopment: true
     }),
