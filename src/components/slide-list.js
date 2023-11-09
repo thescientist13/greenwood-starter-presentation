@@ -116,8 +116,7 @@ class SlideList extends HTMLElement {
       `;
     });
 
-    // TODO don't need the join?
-    template.innerHTML += content.join('');
+    template.innerHTML = template.innerHTML + content.join('');
 
     if (!this.shadowRoot) {
       this.attachShadow({ mode: 'open' });
