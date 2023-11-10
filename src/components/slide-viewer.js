@@ -13,9 +13,8 @@ template.innerHTML = `
 `;
 
 class SlideViewer extends HTMLElement {
-  // static observedAttributes = ['slide'];
   static get observedAttributes() {
-    return['slide'];
+    return ['slide'];
   }
 
   constructor() {
