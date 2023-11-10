@@ -34,7 +34,10 @@ template.innerHTML = `
 `;
 
 class PresenterMode extends HTMLElement {
-  static observedAttributes = ['slides'];
+  // static observedAttributes = ['slides'];
+  static get observedAttributes() {
+    return['slides'];
+  }
 
   constructor() {
     super();
