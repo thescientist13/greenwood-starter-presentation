@@ -1,6 +1,6 @@
 {
   "name": "greenwood-starter-presentation",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "A Greenwood plugin and general purpose starter kit for creating slide decks and presentations from markdown.",
   "main": "index.js",
   "type": "module",
