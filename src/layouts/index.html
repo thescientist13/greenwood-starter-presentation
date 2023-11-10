@@ -26,8 +26,8 @@
     </script>
 
     <script>
-      document.addEventListener('slide-selected', (slide) => {
-        document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(slide.detail));
+      document.addEventListener('slide-selected', (event) => {
+        document.querySelector('slide-viewer').setAttribute('slide', JSON.stringify(event.detail));
       })
     </script>
 

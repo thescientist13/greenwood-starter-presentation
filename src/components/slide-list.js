@@ -1,65 +1,60 @@
-import { css, html, LitElement } from 'lit';
+const template = document.createElement('template');
 
-class SlideList extends LitElement {
+template.innerHTML = `
+  <style>
+    :host {
+      max-height: 700px;
+      overflow: scroll;
+    }
 
-  static get properties() {
-    return {
-      slides: {
-        type: Array
-      }
-    };
-  }
+    div {
+      position: relative;
+      padding-left: 15px;
+    }
 
-  static get styles() {
-    return css`
-      :host {
-        max-height: 700px;
-        overflow: scroll;
-      }
+    /* https://stackoverflow.com/a/20102415/417806 */
+    .iframe-screen {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      cursor: pointer;
+      z-index: 100;
+    }
 
-      div {
-        position: relative;
-        padding-left: 15px;
-      }
+    span.num {
+      float: left
+    }
 
-      /* https://stackoverflow.com/a/20102415/417806 */
-      .iframe-screen {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        cursor: pointer;
-        z-index: 100;
-      }
+    .wrap {
+      width: 100%;
+      padding: 0;
+      filter: drop-shadow(5px 10px 3px gray);
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 */
+      position: relative;
+    }
 
-      span.num {
-        float: left
-      }
+    .wrap > iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -moz-transform: scale(0.75);
+      -moz-transform-origin: 0 0;
+      -o-transform: scale(0.75);
+      -o-transform-origin: 0 0;
+      -webkit-transform: scale(0.75);
+      -webkit-transform-origin: 0 0;
+    }
+  </style>
+`;
 
-      .wrap {
-        width: 100%;
-        padding: 0;
-        filter: drop-shadow(5px 10px 3px gray);
-        height: 0;
-        padding-bottom: 56.25%; /* 16:9 */
-        position: relative;
-      }
-
-      .wrap > iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -moz-transform: scale(0.75);
-        -moz-transform-origin: 0 0;
-        -o-transform: scale(0.75);
-        -o-transform-origin: 0 0;
-        -webkit-transform: scale(0.75);
-        -webkit-transform-origin: 0 0;
-      }
-    `;
+class SlideList extends HTMLElement {
+  static get observedAttributes() {
+    return ['slides'];
   }
 
   constructor() {
@@ -67,20 +62,28 @@ class SlideList extends LitElement {
     this.slides = [];
   }
 
-  slideSelected(slide) {
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'slides' && newValue) {
+      this.slides = JSON.parse(newValue);
+      this.render();
+    }
+  }
+
+  slideSelected(slideId) {
     try {
+      const slide = this.slides.find(slide => slide.id === slideId);
       const { protocol, host, pathname } = window.location;
-      const newurl = `${protocol}//${host}${pathname}?selectedSlideId=${slide.id}`;
+      const newUrl = `${protocol}//${host}${pathname}?selectedSlideId=${slide.id}`;
       
-      window.history.pushState({ path: newurl }, '', newurl);
+      window.history.pushState({ path: newUrl }, '', newUrl);
+      document.dispatchEvent(new CustomEvent('slide-selected', { detail: slide }));
     } catch (e) {
       console.error(e);
     }
-
-    document.dispatchEvent(new CustomEvent('slide-selected', { detail: slide }));
   }
 
-  slideLoaded(slide) {
+  slideLoaded(slideId) {
+    const slide = this.slides.find(slide => slide.id === slideId);
     const frame = this.shadowRoot.getElementById(`slide_${slide.id}`);
     const style = document.createElement('style');
     
@@ -94,19 +97,19 @@ class SlideList extends LitElement {
   }
 
   render() {
-    const { slides } = this;
-    const list = slides.map((slide, index) => {
+    const content = this.slides.map((slide, index) => {
       const slideNum = index += 1;
+      const { id, route } = slide;
 
-      return html`
+      return `
         <span class="num">${slideNum})</span>
-        <div @click="${() => this.slideSelected(slide)}">
+        <div onclick="this.parentNode.host.slideSelected('${id}')">
           <div class="wrap">
             <iframe
-              id="slide_${slide.id}"
-              src="${slide.route}"  
+              id="slide_${id}"
+              src="${route}"
               class="scaled-frame"
-              @load="${() => this.slideLoaded(slide) }"
+              onload="this.parentElement.parentElement.parentNode.host.slideLoaded('${id}')"
               loading="lazy">
             </iframe>
           </div>
@@ -115,9 +118,12 @@ class SlideList extends LitElement {
       `;
     });
 
-    return html`
-      ${list}
-    `;
+    template.innerHTML = template.innerHTML + content.join('');
+
+    if (!this.shadowRoot) {
+      this.attachShadow({ mode: 'open' });
+      this.shadowRoot.appendChild(template.content.cloneNode(true));
+    }
   }
 }
 

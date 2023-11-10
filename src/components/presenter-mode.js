@@ -1,44 +1,41 @@
-import { css, html, LitElement, unsafeCSS } from 'lit';
-import themeCss from '../styles/theme.css?type=css';
+const template = document.createElement('template');
 
-class PresenterMode extends LitElement {
-  
-  static get properties() {
-    return {
-      slides: {
-        type: Array
-      },
-      index: Number
-    };
-  }
+template.innerHTML = `
+  <style>
+    .fullscreen-container {
+      display: none;
+    }
 
-  static get styles() {
-    return css`
-      ${unsafeCSS(themeCss)}
+    .fullscreen-container-on {
+      background-color: var(--color-primary);
+      display: block;
+      z-index: 100;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-      .fullscreen-container {
-        display: none;
-      }
+    iframe {
+      background-color: var(--color-primary);
+      min-width: 100%;
+      min-height: 100%;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 
-      .fullscreen-container-on {
-        background-color: var(--color-primary);
-        display: block;
-        z-index: 100;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
+  <button onclick="this.parentNode.host.enablePresenterMode()">Presenter Mode</button>
 
-      iframe {
-        background-color: var(--color-primary);
-        min-width: 100%;
-        min-height: 100%;
-        width: 100%;
-        height: 100%;
-      }
-    `;
+  <div class="fullscreen-container">
+    <iframe></iframe>
+  </div>
+`;
+
+class PresenterMode extends HTMLElement {
+  static get observedAttributes() {
+    return ['slides'];
   }
 
   constructor() {
@@ -48,18 +45,27 @@ class PresenterMode extends LitElement {
   }
 
   connectedCallback() {
-    super.connectedCallback();
-    
     window.addEventListener('message', (postMessage) => {
-      this.slideNavigationKeyHander(postMessage.data);
+      this.slideNavigationKeyHandler(postMessage.data);
     });
 
     document.addEventListener('keydown', (event) => {
-      this.slideNavigationKeyHander(event.key);
+      this.slideNavigationKeyHandler(event.key);
     });
+
+    if (!this.shadowRoot) {
+      this.attachShadow({ mode: 'open' });
+      this.shadowRoot.appendChild(template.content.cloneNode(true));
+    }
   }
 
-  enablePresenterMode() {    
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'slides' && newValue) {
+      this.slides = JSON.parse(newValue);
+    }
+  }
+
+  enablePresenterMode() {
     this.setCurrentSlide();
     this.shadowRoot.querySelector('div').classList.add('fullscreen-container-on');
   }
@@ -68,7 +74,7 @@ class PresenterMode extends LitElement {
     this.shadowRoot.querySelector('iframe').setAttribute('src', this.slides[index].route);
   }
 
-  slideNavigationKeyHander(keyName) {  
+  slideNavigationKeyHandler(keyName) {
     if (keyName === 'ArrowRight' || keyName === 'Spacebar' || keyName === 'Enter') {
       if ((this.index + 1) !== this.slides.length) {
         this.index = this.index += 1;
@@ -82,16 +88,6 @@ class PresenterMode extends LitElement {
     } else if (keyName === 'Escape') {
       this.shadowRoot.querySelector('div').classList.remove('fullscreen-container-on');
     }
-  }
-  
-  render() {
-    return html`
-      <button @click=${this.enablePresenterMode}>Presenter Mode</button>
-      
-      <div class="fullscreen-container">
-        <iframe></iframe>
-      </div>
-    `;
   }
 }
 
