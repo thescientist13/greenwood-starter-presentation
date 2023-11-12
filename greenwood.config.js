@@ -2,6 +2,7 @@ import fs from 'fs';
 import { greenwoodThemeStarterPresentation } from './index.js';
 import path from 'path';
 import { ResourceInterface } from '@greenwood/cli/src/lib/resource-interface.js';
+import { greenwoodPluginImportCss } from '@greenwood/plugin-import-css';
 
 const packageName = JSON.parse(fs.readFileSync(path.join(process.cwd(), './package.json'), 'utf-8')).name;
 
@@ -27,6 +28,7 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
 
 export default {  
   plugins: [
+    greenwoodPluginImportCss(),
     greenwoodThemeStarterPresentation({
       __isDevelopment: true
     }),
