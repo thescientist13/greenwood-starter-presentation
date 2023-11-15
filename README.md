@@ -20,16 +20,18 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
 
 1. Install the plugin as a dev dependency
     ```sh
-    $ npm install greenwood-starter-presentation --save-dev
+    $ npm i greenwood-starter-presentation --save-dev --legacy-peer-deps
     ```
-1. Add this plugin and all dependent plugins to your _greenwood.config.js_
+1. Add this and Greenwood's Import CSS plugin to your _greenwood.config.js_
     ```js
+    import { greenwoodPluginImportCss } from '@greenwood/plugin-import-css';
     import { greenwoodThemeStarterPresentation } from 'greenwood-starter-presentation';
 
     export default {
       // ...
       
       plugins: [
+        greenwoodPluginImportCss(),
         greenwoodThemeStarterPresentation()
       ]
 

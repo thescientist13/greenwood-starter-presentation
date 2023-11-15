@@ -41,8 +41,12 @@
   "peerDependencies": {
     "@greenwood/cli": "~0.29.0"
   },
+  "dependencies": {
+    "@greenwood/plugin-import-css": "~0.29.0"
+  },
   "devDependencies": {
     "@greenwood/cli": "~0.29.0",
+    "@greenwood/plugin-import-css": "~0.29.0",
     "eslint": "^8.4.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",
