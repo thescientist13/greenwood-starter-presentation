@@ -24,14 +24,14 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
     ```
 1. Add this and Greenwood's Import CSS plugin to your _greenwood.config.js_
     ```js
-    import { greenwoodPluginImportCss } from '@greenwood/plugin-import-css';
+    import { greenwoodPluginImportCss } from '@greenwood/plugin-import-raw';
     import { greenwoodThemeStarterPresentation } from 'greenwood-starter-presentation';
 
     export default {
       // ...
       
       plugins: [
-        greenwoodPluginImportCss(),
+        greenwoodPluginImportRaw(),
         greenwoodThemeStarterPresentation()
       ]
 
