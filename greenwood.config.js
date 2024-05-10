@@ -18,11 +18,14 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
   }
 
   async resolve(url) {
-    const { pathname } = url;
+    const { pathname, searchParams } = url;
+    const params = searchParams.size > 0
+      ? `?${searchParams.toString()}`
+      : '';
     const { userWorkspace } = this.compilation.context;
     const workspaceUrl = pathname.split(`/node_modules/${packageName}/dist/`)[1];
 
-    return new Request(new URL(`./${workspaceUrl}`, userWorkspace));
+    return new Request(new URL(`./${workspaceUrl}${params}`, userWorkspace));
   }
 }
 
