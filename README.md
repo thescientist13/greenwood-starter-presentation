@@ -41,7 +41,7 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
 1. Create a markdown file in your _src/pages_ directory called _index.md_ with these contents
     ```md
     ---
-    template: index
+    layout: index
     ---
     ```
 
@@ -105,14 +105,14 @@ When you are running the app, the following controls and behaviors are available
   - Navigate left and right using the left and right arrow keys
   - To exit presenter mode, hit the ESC key
 
-### Slide Templates and Layouts
+### Slide Layouts
 
-To organize your slide content, this plugin provides the following template that can be specified in markdown file's frontmatter.
+To organize your slide content, this plugin provides the following layouts that can be specified in a markdown file's frontmatter.
 
 ex.
 ```md
 ---
-template: theme-statement
+layout: theme-statement
 ---
 
 Lorum Ipsum all my content....
@@ -131,7 +131,7 @@ The supported structure for the above slides looks like this
 #### Center Content
 ```md
 ---
-template: theme-center-content
+layout: theme-center-content
 ---
 
 # What's the Deal...?
@@ -144,7 +144,7 @@ Lorum Ipsum
 #### Outline
 ```md
 ---
-template: theme-outline
+layout: theme-outline
 ---
 
 # My Talk Agenda
@@ -161,7 +161,7 @@ template: theme-outline
 #### Statement
 ```md
 ---
-template: theme-statement
+layout: theme-statement
 ---
 
 Spicy jalapeno bacon ipsum dolor.
@@ -172,7 +172,7 @@ Spicy jalapeno bacon ipsum dolor.
 #### Title
 ```md
 ---
-template: theme-title
+layout: theme-title
 ---
 
 # My Talk
@@ -186,7 +186,7 @@ template: theme-title
 #### Top Title Image Left
 ```md
 ---
-template: theme-top-title-image-left
+layout: theme-top-title-image-left
 ---
 
 # Thank You!
@@ -202,7 +202,7 @@ template: theme-top-title-image-left
 #### Top Title
 ```md
 ---
-template: theme-top-title
+layout: theme-top-title
 ---
 
 # Welcome To My Talk
