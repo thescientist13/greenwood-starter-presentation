@@ -208,16 +208,17 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@greenwood/cli@~0.30.0-alpha.3":
-  version "0.30.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@greenwood/cli/-/cli-0.30.0-alpha.3.tgz#1adba58873b3d06c56b5505293e0b96caf80c229"
-  integrity sha512-pYzTp9B9yYmjCk+KHTtqzA4P5jy8hjbSFJWRjc22htja//UyKYF/37iTfxFnTcfAIlBYzUSYq99t9Oi43v+vSA==
+"@greenwood/cli@~0.30.0-alpha.6":
+  version "0.30.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/@greenwood/cli/-/cli-0.30.0-alpha.6.tgz#92f1b1165e6082a4b71f53201c6b27a6bf4e037f"
+  integrity sha512-jQeZknzbvIJyo/M8rp3yFZAv72vuX+yjXES8UEeW2yL1jhvIyTY2Sr2xNp4zM3K/WVCedp+hBcf/QCCr+Ge+Aw==
   dependencies:
     "@rollup/plugin-commonjs" "^25.0.0"
     "@rollup/plugin-node-resolve" "^15.0.0"
     "@rollup/plugin-replace" "^5.0.5"
     "@rollup/plugin-terser" "^0.4.4"
     acorn "^8.0.1"
+    acorn-import-attributes "^1.9.5"
     acorn-walk "^8.0.0"
     commander "^2.20.0"
     css-tree "^2.2.1"
@@ -237,10 +238,10 @@
     unified "^9.2.0"
     wc-compiler "~0.14.0"
 
-"@greenwood/plugin-import-raw@~0.30.0-alpha.3":
-  version "0.30.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@greenwood/plugin-import-raw/-/plugin-import-raw-0.30.0-alpha.3.tgz#fea54995224d2a4b10e85b66d11a5862ba8dbbe0"
-  integrity sha512-pw2mWYbyKWoF+JDAsWjntJt2Q9RFgczdkm7aQ9jEUZUlsVqc0Cbum4u8wiAXzmJjnN3NsBfKcRoV5tZ2E7Ye/g==
+"@greenwood/plugin-import-raw@~0.30.0-alpha.6":
+  version "0.30.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/@greenwood/plugin-import-raw/-/plugin-import-raw-0.30.0-alpha.6.tgz#d5c4236440ae1ba336b058c05368cfdb5101d0a4"
+  integrity sha512-t3KgUOEfbet7NFAMYMz6W/9O4MH+KqMAge/xFyPspyo8kjNaQgmhfOiWBg7MQW5b28do/SODgRB4EZGKUVgOug==
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.2"
@@ -3577,6 +3578,7 @@ statuses@2.0.1:
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -3627,6 +3629,7 @@ stringify-entities@^3.0.1:
     xtend "^4.0.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==

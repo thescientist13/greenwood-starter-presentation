@@ -22,7 +22,7 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
     ```sh
     $ npm i greenwood-starter-presentation --save-dev --legacy-peer-deps
     ```
-1. Add this and Greenwood's Import CSS plugin to your _greenwood.config.js_
+1. Add this and Greenwood's Import Raw plugin to your _greenwood.config.js_
     ```js
     import { greenwoodPluginImportCss } from '@greenwood/plugin-import-raw';
     import { greenwoodThemeStarterPresentation } from 'greenwood-starter-presentation';
@@ -37,7 +37,7 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
 
     };
     ```
-1. Make sure to add `type: "module"` to uour _package.json_
+1. Make sure to add `type: "module"` to your _package.json_
 1. Create a markdown file in your _src/pages_ directory called _index.md_ with these contents
     ```md
     ---
