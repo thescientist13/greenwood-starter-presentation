@@ -3,13 +3,13 @@ import fs from 'fs';
 
 const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 
-class GraphResolverLoader extends ResourceInterface {
+class GraphJsonResolverLoader extends ResourceInterface {
   constructor(compilation) {
     super(compilation);
   }
 
   shouldResolve(url) {
-    return url.pathname === '/graph.json' && process.env.__GWD_COMMAND__ === 'develop';
+    return url.pathname === '/graph.json' && process.env.__GWD_COMMAND__ === 'develop'; // eslint-disable-line no-underscore-dangle
   }
 
   resolve() {
@@ -34,7 +34,7 @@ const greenwoodThemeStarterPresentation = (options = {}) => [{
 }, {
   type: 'resource',
   name: `${packageJson.name}:resource`,
-  provider: (compilation) => new GraphResolverLoader(compilation)
+  provider: (compilation) => new GraphJsonResolverLoader(compilation)
 }];
 
 export {
