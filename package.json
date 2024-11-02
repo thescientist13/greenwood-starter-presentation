@@ -28,7 +28,7 @@
     "build": "npm run build:pre && greenwood build",
     "build:pre": "mkdir -pv ./node_modules/greenwood-starter-presentation/dist && rsync -rv --exclude 'pages/' ./src/ ./node_modules/greenwood-starter-presentation/dist",
     "build:pre-win": "rimraf node_modules\\greenwood-starter-presentation\\dist && mkdir node_modules\\greenwood-starter-presentation\\dist && xcopy src node_modules\\greenwood-starter-presentation\\dist\\ /e",
-    "develop": "greenwood develop",
+    "dev": "greenwood develop",
     "dist": "rsync -rv --exclude 'pages/' src/ dist",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint \"*.js\" \"./src/**/*.js\"",
@@ -39,14 +39,14 @@
     "start": "npm run develop"
   },
   "peerDependencies": {
-    "@greenwood/cli": "~0.29.0"
+    "@greenwood/cli": "~0.30.0"
   },
   "dependencies": {
-    "@greenwood/plugin-import-css": "~0.29.0"
+    "@greenwood/plugin-import-raw": "~0.30.0"
   },
   "devDependencies": {
-    "@greenwood/cli": "~0.29.0",
-    "@greenwood/plugin-import-css": "~0.29.0",
+    "@greenwood/cli": "~0.30.0",
+    "@greenwood/plugin-import-raw": "~0.30.0",
     "eslint": "^8.4.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.12.0",
