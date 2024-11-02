@@ -7,7 +7,7 @@
     <script type="module">
       const basePath = globalThis.__GWD_BASE_PATH__ || '';
 
-      fetch(`${basePath}/graph.json`)
+      fetch(`${window.location.origin}${basePath}/graph.json`)
         .then((response) => response.json())
         .then((response) => {
           // auto generated default page by Greenwood
