@@ -1,6 +1,6 @@
 # greenwood-starter-presentation
 
-Greenwood plugin and kick-starter repo for creating and authoring a slide deck from markdown, powered by [**GreenwoodJS**](https://www.greenwoodjs.io/)!  ♻️
+Greenwood plugin and kick-starter repo for creating and authoring a slide deck from markdown, powered by [**GreenwoodJS**](https://www.greenwoodjs.dev/)!  ♻️
 
 ![greenwood-starter-presentation](./.github/images/greenwood-starter-presentation.png)
 
@@ -11,10 +11,9 @@ Greenwood plugin and kick-starter repo for creating and authoring a slide deck f
 There are a couple options available for how you can use this project to kickstart your next presentation.
 
 ### Greenwood Plugin (recommended)
-This project is principally intended to be consumed by a Greenwood project as a ["theme pack" plugin](https://www.greenwoodjs.io/guides/theme-packs/) installed from npm.  The advantage being that as enhancements and improvements are made to the project, you can pull those in just by updating a version number in your _package.json_.
+This project is principally intended to be consumed by a Greenwood project as a ["theme pack" plugin](https://www.greenwoodjs.dev/guides/tutorials/theme-packs/) installed from npm.  The advantage being that as enhancements and improvements are made to the project, you can pull those in just by updating a version number in your _package.json_.
 
-
-> Check out these links to learn more [about Greenwood](https://www.greenwoodjs.io/about/) as well as the [Quick start guide](https://www.greenwoodjs.io/getting-started/).
+> If you're new to Greenwood, you can learn more [about the project](https://www.greenwoodjs.dev/introduction/about//) or check out the [Getting Started guide](https://www.greenwoodjs.dev/guides/getting-started/).
 
 To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` has already been installed), please do the following:
 
@@ -71,7 +70,7 @@ You can also just fork and / or clone this repo from GitHub using `git`.
 For those unfamiliar, [CSS Zen Garden](http://www.csszengarden.com/) is a site the shares examples of designers and developers using the same HTML, but making completely unique looking layouts using just CSS.  The concept of a theme pack is an homage to this philosophy.  Just like you would have in Google Slides or Powerpoint, this project provides not only templates and styles to pre-theme and layout all your context, but also a complete UI to develop and present the slides with!
 
 
-> _As this repo and plugin are both based on Greenwood, you are able to use all of Greenwood's [APIs](https://www.greenwoodjs.io/docs/) and [plugins](https://www.greenwoodjs.io/plugins/) in your own project too._
+> _As this repo and plugin are both based on Greenwood, you are able to use all of Greenwood's [standard APIs and plugins](https://www.greenwoodjs.dev/docs/) in your own project too._
 
 
 ### Development
@@ -214,7 +213,7 @@ Empty page body with an h1 at the top with `--color-secondary` color behind it a
 
 ----
 
-> _Remember, you can always add your own HTML and <style> tags right into markdown.  Additionally, Greenwood also supports ad-hoc and one off imports of CSS and JS via [frontmatter imports](https://www.greenwoodjs.io/docs/front-matter/#imports) for extra customization!_
+> _Remember, you can always add your own HTML and `<style>` tags right into your markdown.  Additionally, Greenwood also supports ad-hoc and one off imports of CSS and JS via [frontmatter imports](https://www.greenwoodjs.dev/docs/ressources/markdown/#frontmatter) for extra customization!_
 
 ### Theming and Design System
 The following global variables are provided to you to customize and override using [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
@@ -247,7 +246,7 @@ The following global variables are provided to you to customize and override usi
 
 ### Known Issues
 
-There a few open items in our issue tracker as we work to an [initial 1.0.0 release](https://github.com/thescientist13/greenwood-starter-presentation/milestone/1).  It would also be useful to be familiar with Greenwood's [Theme Pack FAQ](https://www.greenwoodjs.io/guides/theme-packs/#faq) if something isn't working as expected.
+There a few open items in our issue tracker as we work to an [initial 1.0.0 release](https://github.com/thescientist13/greenwood-starter-presentation/milestone/1).  It would also be useful to be familiar with Greenwood's [Theme Pack FAQ](https://www.greenwoodjs.dev/guides/tutorials/theme-packs/#faq) if something isn't working as expected.
 
 ### Upgrades
 
