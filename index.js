@@ -9,7 +9,7 @@ class GraphJsonResolverLoader extends ResourceInterface {
   }
 
   shouldResolve(url) {
-    return url.pathname === '/graph.json' && process.env.__GWD_COMMAND__ === 'develop'; // eslint-disable-line no-underscore-dangle
+    return url.pathname === '/graph.json' && process.env.__GWD_COMMAND__ === 'develop';
   }
 
   resolve() {
@@ -21,7 +21,7 @@ const greenwoodThemeStarterPresentation = (options = {}) => [{
   type: 'context',
   name: `${packageJson.name}:context`,
   provider: (compilation) => {
-    const layoutsLocation = options.__isDevelopment // eslint-disable-line no-underscore-dangle
+    const layoutsLocation = options.__isDevelopment
       ? new URL('./templates/', compilation.context.userWorkspace)
       : new URL('./dist/templates/', import.meta.url);
 
