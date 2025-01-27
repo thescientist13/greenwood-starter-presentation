@@ -13,7 +13,6 @@ class MyThemePackDevelopmentResource extends ResourceInterface {
   }
 
   async shouldResolve(url) {
-    // eslint-disable-next-line no-underscore-dangle
     return process.env.__GWD_COMMAND__ === 'develop' && url.pathname.indexOf(`/node_modules/${packageName}/`) >= 0;
   }
 

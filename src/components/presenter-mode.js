@@ -1,6 +1,5 @@
 import themeCss from '../styles/theme.css?type=raw';
 
-console.log({ themeCss });
 const template = document.createElement('template');
 
 template.innerHTML = `

@@ -31,7 +31,7 @@
     "dev": "greenwood develop",
     "dist": "rsync -rv --exclude 'pages/' src/ dist",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "eslint \"*.js\" \"./src/**/*.js\"",
+    "lint:js": "eslint",
     "lint:css": "stylelint \"./src/**/*.js\", \"./src/**/*.css\"",
     "prepublishOnly": "rm -rf dist/ && mkdir dist/ && npm run dist",
     "serve": "npm run build:pre && greenwood build && greenwood serve",
@@ -39,18 +39,19 @@
     "start": "npm run develop"
   },
   "peerDependencies": {
-    "@greenwood/cli": "~0.30.0"
+    "@greenwood/cli": "~0.31.0"
   },
   "dependencies": {
-    "@greenwood/plugin-import-raw": "~0.30.0"
+    "@greenwood/plugin-import-raw": "~0.31.0"
   },
   "devDependencies": {
-    "@greenwood/cli": "~0.30.0",
-    "@greenwood/plugin-import-raw": "~0.30.0",
-    "eslint": "^8.4.0",
-    "rimraf": "^3.0.2",
-    "stylelint": "^13.12.0",
-    "stylelint-a11y": "^1.2.3",
-    "stylelint-config-standard": "^20.0.0"
+    "@double-great/stylelint-a11y": "^3.0.2",
+    "@eslint/js": "^9.11.1",
+    "@greenwood/cli": "~0.31.0",
+    "@greenwood/plugin-import-raw": "~0.31.0",
+    "eslint": "^9.11.1",
+    "rimraf": "^6.0.0",
+    "stylelint": "^16.10.0",
+    "stylelint-config-recommended": "^14.0.1"
   }
 }
