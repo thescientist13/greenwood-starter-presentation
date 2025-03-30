@@ -1,7 +1,7 @@
 import { greenwoodThemeStarterPresentation } from './index.js';
 import { greenwoodPluginImportRaw } from '@greenwood/plugin-import-raw';
 
-const packageJson = await import(new URL("./package.json", import.meta.url), { with: { type: "json" } }).default;
+const packageJson = (await import(new URL("./package.json", import.meta.url), { with: { type: "json" } })).default;
 const packageName = packageJson.name;
 
 class MyThemePackDevelopmentResource {
