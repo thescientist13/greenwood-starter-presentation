@@ -39,16 +39,16 @@
     "start": "npm run develop"
   },
   "peerDependencies": {
-    "@greenwood/cli": "~0.31.0"
+    "@greenwood/cli": "~0.32.0"
   },
   "dependencies": {
-    "@greenwood/plugin-import-raw": "~0.31.0"
+    "@greenwood/plugin-import-raw": "~0.32.0"
   },
   "devDependencies": {
     "@double-great/stylelint-a11y": "^3.0.2",
     "@eslint/js": "^9.11.1",
-    "@greenwood/cli": "~0.31.0",
-    "@greenwood/plugin-import-raw": "~0.31.0",
+    "@greenwood/cli": "~0.32.0",
+    "@greenwood/plugin-import-raw": "~0.32.0",
     "eslint": "^9.11.1",
     "rimraf": "^6.0.0",
     "stylelint": "^16.10.0",

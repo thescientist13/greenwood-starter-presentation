@@ -1,11 +1,8 @@
-import { ResourceInterface } from '@greenwood/cli/src/lib/resource-interface.js';
-import fs from 'fs';
+const packageJson = (await import(new URL("./package.json", import.meta.url), { with: { type: "json" } })).default;
 
-const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
-
-class GraphJsonResolverLoader extends ResourceInterface {
+class GraphJsonResolverLoader {
   constructor(compilation) {
-    super(compilation);
+    this.compilation = compilation;
   }
 
   shouldResolve(url) {

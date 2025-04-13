@@ -1,14 +1,13 @@
-import fs from 'fs';
 import { greenwoodThemeStarterPresentation } from './index.js';
-import path from 'path';
-import { ResourceInterface } from '@greenwood/cli/src/lib/resource-interface.js';
 import { greenwoodPluginImportRaw } from '@greenwood/plugin-import-raw';
 
-const packageName = JSON.parse(fs.readFileSync(path.join(process.cwd(), './package.json'), 'utf-8')).name;
+const packageJson = (await import(new URL("./package.json", import.meta.url), { with: { type: "json" } })).default;
+const packageName = packageJson.name;
 
-class MyThemePackDevelopmentResource extends ResourceInterface {
+class MyThemePackDevelopmentResource {
   constructor(compilation, options) {
-    super(compilation, options);
+    this.compilation = compilation;
+    this.options = options;
     this.extensions = ['*'];
   }
 
