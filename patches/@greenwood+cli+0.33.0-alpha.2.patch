@@ -1,0 +1,75 @@
+diff --git a/node_modules/@greenwood/cli/src/lib/layout-utils.js b/node_modules/@greenwood/cli/src/lib/layout-utils.js
+index 15ee561..a91cd4f 100644
+--- a/node_modules/@greenwood/cli/src/lib/layout-utils.js
++++ b/node_modules/@greenwood/cli/src/lib/layout-utils.js
+@@ -230,6 +230,7 @@ async function mergeContentIntoLayout(
+             ? childContents
+             : "";
+ 
++    console.log('FINAL BODY????', { finalBody, parentBody, childBody, childContents  });
+     mergedContents = `<!DOCTYPE html>
+       ${mergedHtml}
+         <head>
+@@ -246,6 +247,7 @@ async function mergeContentIntoLayout(
+     `;
+   }
+ 
++  // console.log({ matchingRoute });
+   return mergedContents;
+ }
+ 
+@@ -271,15 +273,26 @@ async function getPageLayout(pageContents, compilation, matchingRoute, ssrLayout
+ 
+   let layoutContents;
+ 
++  console.log('getPageLayout @@@@', { layout, matchingRoute, pageContents });
+   if (ssrLayout) {
+     // use existing layout from SSR rendering
+     layoutContents = ssrLayout;
+   } else if (layout && (customPluginPageLayouts.length > 0 || hasCustomStaticLayout)) {
+     // has a custom layout from markdown frontmatter or context plugin
+-    layoutContents =
+-      customPluginPageLayouts.length > 0
+-        ? await fs.readFile(new URL(`./${layout}.html`, customPluginPageLayouts[0]), "utf-8")
+-        : await fs.readFile(new URL(`./${layout}.html`, userLayoutsDir), "utf-8");
++    console.log('jere????????', { customPluginPageLayouts, hasCustomStaticLayout })
++    const contents = customPluginPageLayouts.length > 0
++      ? await fs.readFile(customPluginPageLayouts[0], "utf-8")
++      : await fs.readFile(new URL(`./${layout}.html`, userLayoutsDir), "utf-8");
++
++    if(pageContents) {
++      layoutContents = contents
++    } else {
++      pageContents = contents;
++    }
++    // pageContents =
++    //   customPluginPageLayouts.length > 0
++    //     ? await fs.readFile(customPluginPageLayouts[0], "utf-8")
++    //     : await fs.readFile(new URL(`./${layout}.html`, userLayoutsDir), "utf-8");
+   } else if (customPluginDefaultPageLayouts.length > 0 || (!is404Page && hasPageLayout)) {
+     // has a dynamic default page layout from context plugin
+     layoutContents =
+@@ -324,6 +337,7 @@ async function getPageLayout(pageContents, compilation, matchingRoute, ssrLayout
+     layoutContents = await fs.readFile(new URL("./page.html", layoutsDir), "utf-8");
+   }
+ 
++  console.log('PAGE LAYOUT CONTENTS', { layoutContents });
+   const mergedContents = await mergeContentIntoLayout(
+     "content",
+     layoutContents,
+@@ -332,6 +346,7 @@ async function getPageLayout(pageContents, compilation, matchingRoute, ssrLayout
+     matchingRoute,
+   );
+ 
++  console.log('MERGED CONTENTS', { mergedContents });
+   return mergedContents;
+ }
+ 
+@@ -392,6 +407,7 @@ async function getAppLayout(pageLayoutContents, compilation, matchingRoute) {
+           : await fs.readFile(new URL("./app.html", layoutsDir), "utf-8");
+   let mergedLayoutContents = "";
+ 
++  console.log('getAppLayout', { appLayoutContents, pageLayoutContents });
+   mergedLayoutContents = await mergeContentIntoLayout(
+     "page",
+     appLayoutContents,
