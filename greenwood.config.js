@@ -1,5 +1,6 @@
 import { greenwoodThemeStarterPresentation } from './index.js';
 import { greenwoodPluginImportRaw } from '@greenwood/plugin-import-raw';
+import { greenwoodPluginMarkdown } from '@greenwood/plugin-markdown';
 
 const packageJson = (await import(new URL("./package.json", import.meta.url), { with: { type: "json" } })).default;
 const packageName = packageJson.name;
@@ -29,6 +30,7 @@ class MyThemePackDevelopmentResource {
 
 export default {  
   plugins: [
+    greenwoodPluginMarkdown(),
     greenwoodPluginImportRaw(),
     greenwoodThemeStarterPresentation({
       __isDevelopment: true
