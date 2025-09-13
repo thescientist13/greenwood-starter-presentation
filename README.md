@@ -23,6 +23,7 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
     ```
 1. Add this and Greenwood's Import Raw plugin to your _greenwood.config.js_
     ```js
+    import { greenwoodPluginMarkdown } from '@greenwood/plugin-markdown';
     import { greenwoodPluginImportCss } from '@greenwood/plugin-import-raw';
     import { greenwoodThemeStarterPresentation } from 'greenwood-starter-presentation';
 
@@ -30,6 +31,7 @@ To add this plugin to an _existing_ Greenwood project (where `@greenwood/cli` ha
       // ...
       
       plugins: [
+        greenwoodPluginMarkdown(),
         greenwoodPluginImportRaw(),
         greenwoodThemeStarterPresentation()
       ]
